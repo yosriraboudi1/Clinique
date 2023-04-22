@@ -56,7 +56,7 @@ $ListeDesAnnonce = $annonces->getAll();
     <section>
                     <i class="bi bi-bell icon2"></i>
                     <select name="pets" >
-                        <option value="today">Aujourd'hui</option>
+                        <option value="today">Aujourd'huiii</option>
                     </select>
     </section>
 <br><br>
