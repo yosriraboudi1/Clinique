@@ -1,0 +1,109 @@
+<html lang="en">
+
+<head>
+    <meta name="description">
+    <meta name="keywords" >
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OASIS MENTALE</title>
+    <link rel="stylesheet" href="../css/style_dash_sec.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>  
+            <nav class="sidebar">
+                <ul>
+                    <li>
+                        <img src="../images/logo.png" id="img">
+                        </li>
+                        <br>
+                        <br>
+                            <br>
+                            <li>
+                                <a href="affiche_res.php"><i class="bi bi-person-circle"></i>&nbsp;Liste des <br>reservations </a>
+                            </li>
+                            <li>
+                                <a href="aff_annonce.php"><i class="bi bi-person-circle"></i>&nbsp;Liste des <br>annonces </a>
+                            </li>
+                            <li>
+                                <a href="ajout_annonces.html"><i class="bi bi-plus-lg"></i>&nbsp;Ajouter <br>une annonce </a>
+                            </li>
+                            
+                        </ul>
+                    </nav>
+                
+            </div>
+        </div>
+    </div>
+</header>
+    <section id="add">
+                    <i class="bi bi-bell icon2"></i>
+                    <select name="pets" >
+                        <option value="today">Aujourd'hui</option>
+                    </select>
+                    <br><br>
+                    <div class="form" >
+                        <form  action ="ajout_annonce.php" method="POST" >
+                            
+                            <label for="nom" style="font-weight : bold ;">Nom : </label><br>
+                            <input type="text" name="nom" id="nom" placeholder="Entrer votre Nom" style="width : 250px ; height:34px ; border: 0px ; border-radius : 8px " pattern="^[a-zA-Z\s]*$" title="le nom doit etre alphabetique seulement"><br><br>
+                            <label for="prenom" style="font-weight : bold ;">Prenom : </label><br>
+                            <input type="text" name="prenom" id="prenom" placeholder="Entrer votre Prenom" style="width : 250px ; height:34px ; border: 0px ; border-radius : 8px " pattern="^[a-zA-Z\s]*$" title="le prenom doit etre alphabetique seulement"><br><br>
+                            <label for="ntel" style="font-weight : bold ;">Numero de telephone : </label><br>
+                            <input type="text" name="ntel" id="ntel" placeholder="Entrer votre Numero" style="width : 250px ; height:34px ; border: 0px ; border-radius : 8px " pattern="^\d{8}$" title="le numero de telehpone doit etre numerique et contient obligatoirement 8 chiffre"><br><br>
+                            <label for="hdeb" style="font-weight : bold ;">Heure de debut : </label><br>
+                            <input type="text" name="hdeb" id="hdeb" placeholder="Entrer l'heure de debut :" style="width : 250px ; height:34px ; border: 0px ; border-radius : 8px " pattern="^([01]\d|2[0-3]):([0-5]\d)$" title="L'heure doit être au format HH:MM"><br><br>
+                            <label for="hfin" style="font-weight : bold ;">Heure de fin  : </label><br>
+                            <input type="text" name="hfin" id="hfin" placeholder="Entrer l'heure de fin :" style="width : 250px ; height:34px ; border: 0px ; border-radius : 8px " pattern="^([01]\d|2[0-3]):([0-5]\d)$" title="L'heure doit être au format HH:MM"><br><br><br>
+                            <input type="submit" value="Ajouter" style="margin-left :50px; background-color : #1B96C4; width : 140px ; color : white ;height:32px ; border : 0px ; border-radius : 5px ; "></a>
+                        </form>
+                    </div>
+
+    </section>
+   <!-- onsubmit="return verif()" 
+    <script>
+        function verif(){
+            
+            var ch2 = document.getElementById("nom").value ;
+            for (i = 0; i < ch2.length; i++) {
+            if ((ch2.charAt(i).toUpperCase() < 'A') || (ch2.charAt(i).toUpperCase() > 'Z')) {
+            alert("Le nom doit etre alphabetique seulement!!");
+            return false;
+        }
+    }   
+            var ch1 = document.getElementById("prenom").value ;
+                for (i = 0; i < ch1.length; i++) {
+                if ((ch1.charAt(i).toUpperCase() < 'A') || (ch1.charAt(i).toUpperCase() > 'Z')) {
+                alert("le prenom doit etre alphabetique seulement !!");
+            return false;
+         }
+        }
+            num = document.getElementById("ntel").value ;
+           if ((num.length!= 8) || (isNaN(num))){
+                alert("le numero de telehpone doit etre numerique et contient obligatoirement 8 chiffre !!");
+                return false ;
+            }
+
+            hdeb = document.getElementById("hdeb").value ;
+            if (hdeb.charAt(2)!= ':'){
+                alert("l'heure de debut doit etre de cette format 00:00 ");
+                return false ;
+            }
+            hfin = document.getElementById("hfin").value ;
+            if (hfin.charAt(2)!=':'){
+                alert("l'heure de fin doit etre de cette format 00:00");
+                return false ;
+            }
+
+
+        }
+    </script>
