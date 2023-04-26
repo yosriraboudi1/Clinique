@@ -12,7 +12,7 @@ $res = Annonce::Update($id_modif,$nom_modif,$pren_modif,$num_tel_modif,$heure_de
 if ($res){
     ?>
     <script>
-    location.replace("aff_annonce.php");
+    location.replace("affiche_annonce.php");
     </script>
     <?php
 }

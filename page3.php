@@ -42,7 +42,7 @@
                         
                         <label for="date_fin" style="font-weight : bold ;">Date fin</label><br>
                             <input type="text" name="date_fin" id="date_fin" placeholder="Entrez la date de fin" style="border : 0px ; border-radius: 9px ; width : 320px ; height : 34px ; " pattern="^(0?[1-9]|[1-2][0-9]|3[0-1])/(0?[1-9]|1[0-2])/([0-9]{4})$" title="La date doit être au format jj/mm/aaaa"><br><br>
-                        
+                            <input type="hidden" name="id" id="id" value=<?= $_GET['id'] ?>>
                          <label for="commentaire" style="font-weight : bold ;">Commentaire :</label><br>
                             <input type="text" name="commentaire" id="commentaire" placeholder="Ecrivez le cas du malade  " style="border : 0px ; border-radius: 9px ; width : 320px ; height : 34px ; " pattern="^[a-zA-Z\s]*$" title="le commentaire doit etre alphabetique seulement"><br><br>
                             <input type="submit" value="Reserver" style="margin-left :85px; background-color : #1B96C4; width : 140px ; color : white ;height:32px ; border : 0px ; border-radius : 5px ; "></a>

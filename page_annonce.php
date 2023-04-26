@@ -1,7 +1,8 @@
 <?php
 require "html/connection.php";
 $db = connect_db();
-$req = "select * from annonce" ;
+$req = "SELECT a.id ,a.nom_inf,a.prenom_inf,a.numtel_inf,a.heure_deb,a.heure_fin FROM annonce as a , reservation as r where (a.id != r.id_ann ); " ;
+
 try{
     $res=$db->query($req);
 }catch (PDOExeception $e){
@@ -106,9 +107,8 @@ try{
     $numtel = $annonce["numtel_inf"];
     $hdeb = $annonce["heure_deb"];
     $hfin = $annonce["heure_fin"];
-
-
-  ?>
+    $id = $annonce["id"];
+?>
                 <div class="card col-4">
                     <img class="card-img-top" src="images/card_img.jpg" alt="Card image cap">
                     <div class="card-body">
@@ -122,7 +122,7 @@ try{
                         echo "Pour m'appeler voici mon numero :".$numtel ;
                         ?>
                     </p>
-                      <button type="button" onClick="window.location.href='page3.html'" class="btn" style="background-color :#136989; color : white ;">Reserver maintenant </button>
+                      <button type="button" onClick="window.location.href='page3.php?id=<?=$id ?>'" class="btn" style="background-color :#136989; color : white ;">Reserver maintenant </button>
                     </div>
                     <?php
                       echo '<i class="bi bi-patch-check-fill"></i>';

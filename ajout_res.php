@@ -11,7 +11,9 @@ $prenom = $db->quote($_POST["prenom"]);
 $date_deb = $db->quote($_POST["date_deb"]);
 $date_fin = $db->quote($_POST["date_fin"]);
 $commentaire = $db->quote($_POST["commentaire"]);
-$rty = "INSERT INTO reservation (cin ,num_tel, nom ,prenom, date_deb, date_fin, comm) values ($cin , $tel ,$nom, $prenom , $date_deb , $date_fin, $commentaire)";
+$id_ann=$_POST["id"];
+$rty = "INSERT INTO reservation (cin ,num_tel, nom ,prenom, date_deb, date_fin, comm,id_ann) values ($cin , $tel ,$nom, $prenom , $date_deb , $date_fin, $commentaire,$id_ann)";
+
 try {
     $aze=$db->exec($rty);
     if ($aze){

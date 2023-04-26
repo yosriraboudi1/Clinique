@@ -42,7 +42,7 @@ $a=Annonce::getById($id_modif);
                                 <a href="affiche_res.php"><i class="bi bi-person-circle"></i>&nbsp;Liste des <br>reservations </a>
                             </li>
                             <li>
-                                <a href="aff_annonce.php"><i class="bi bi-person-circle"></i>&nbsp;Liste des <br>annonces </a>
+                                <a href="affiche_annonce.php"><i class="bi bi-person-circle"></i>&nbsp;Liste des <br>annonces </a>
                             </li>
                             <li>
                                 <a href="ajout_annonces.html"><i class="bi bi-plus-lg"></i>&nbsp;Ajouter <br>une annonce </a>

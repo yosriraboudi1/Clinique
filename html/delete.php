@@ -7,7 +7,7 @@ $res = Annonce::Delete($id_supp);
 if ($res){
     ?>
     <script>
-    location.replace("aff_annonce.php");
+    location.replace("affiche_annonce.php");
     </script>
     <?php
 }

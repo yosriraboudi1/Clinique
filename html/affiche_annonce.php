@@ -3,9 +3,9 @@ require "connection.php";
 require "..\Models\AnnonceModel.php";
 
 $annonces = new Annonce(); 
-$ListeDesAnnonce = $annonces->getAll();
+ $ListeDesAnnonce = $annonces->getAll();
 
-?>
+?>  
 <html lang="en">
 <head>
     <meta name="description">
@@ -39,7 +39,7 @@ $ListeDesAnnonce = $annonces->getAll();
                                 <a href="affiche_res.php"><i class="bi bi-person-circle"></i>&nbsp;Liste des <br>reservations </a>
                             </li>
                             <li>
-                                <a href="aff_annonce.php"><i class="bi bi-person-circle"></i>&nbsp;Liste des <br>annonces </a>
+                                <a href="affiche_annonce.php"><i class="bi bi-person-circle"></i>&nbsp;Liste des <br>annonces </a>
                             </li>
                             <li>
                                 <a href="ajout_annonces.html"><i class="bi bi-plus-lg"></i>&nbsp;Ajouter <br>une annonce </a>
@@ -71,26 +71,23 @@ $ListeDesAnnonce = $annonces->getAll();
                             <th>Delete</th>
                         </thead>
                         <?php
-                       
                         foreach ($ListeDesAnnonce as $annonce){
                            
-                            echo "<tr>" ;
-                            echo "<td> $annonce->nom_inf </td> ";
-                            echo "<td> $annonce->prenom_inf </td> ";
-                            echo "<td> $annonce->numtel_inf </td> ";
-                            echo "<td> $annonce->heure_deb </td> ";
-                            echo "<td> $annonce->heure_fin</td> ";
-                            ?>
-                            <td><a href="update.php?id=<?=$annonce->id ?>"><i class="bi bi-pen"></i></a></td>;
-                            <td><a href="delete.php?id=<?=$annonce->id ?>"><i class="bi bi-trash-fill"></i></a></td>;
-                            <?php
-                            echo "</tr>";
-                            echo "<br>" ;
-                            
-                        } 
-                        ?>
-
-                      </table>
+                           echo "<tr>" ;
+                           echo "<td> $annonce->nom_inf </td> ";
+                           echo "<td> $annonce->prenom_inf </td> ";
+                           echo "<td> $annonce->numtel_inf </td> ";
+                           echo "<td> $annonce->heure_deb </td> ";
+                           echo "<td> $annonce->heure_fin</td> ";
+                           ?>
+                           <td><a href="update.php?id=<?=$annonce->id ?>"><i class="bi bi-pen"></i></a></td>;
+                           <td><a href="delete.php?id=<?=$annonce->id ?>"><i class="bi bi-trash-fill"></i></a></td>;
+                           <?php
+                           echo "</tr>";
+                           echo "<br>" ;
+                           
+                       } 
+                       ?>
     
     
 
