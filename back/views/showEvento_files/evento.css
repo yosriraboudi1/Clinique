@@ -1,0 +1,337 @@
+/* h3 {display:inline-block} */
+/* h2.mainTitle {color:#f76600;} */
+
+/* .row {width:990px;}
+.row.row-inline .rowTitle {float:left; width:200px;}
+.row.row-inline .rowContent {float:left;}
+span.mandatory {color:#f76600;} */
+
+/* #mainStackContainer .dijitStackContainer-child.dijitStackContainer-dijitContentPane{height: auto !important;} */ /* l'altezza pu� cambiare in base al contenuto */
+
+/* ---- Event Details ---- */
+/* toggleButtonWidget */
+/* .rowContent .toggleButtonWidget {float:left; margin-left:10px; font-size: 12px; font-weight: 500;} */
+
+/* .rowContent.eventLocation .toggleButtonWidget {margin-left:210px;} */
+
+/* ---- eventLocation ---- */
+/* .rowContent.eventLocation .locationSwitchContainer {position:relative; float: left;}
+.rowContent.eventLocation .eventLocationMapContainer {position:absolute; top:0; left:10px; z-index:10; width:240px; height:275px; display:none;}
+.rowContent.eventLocation .eventLocationMap {width:100%; height:100%;}
+.rowContent.eventLocation  .eventDetailsWidgetLatLng{color: #999999; margin: 5px;} */
+
+/* .rowContent.eventLocation .locationContainer, */
+
+/* .rowContent.additionalDetails .organizerDetailsContainer,
+.rowContent.additionalDetails .eventDescription,
+.rowContent.additionalDetails .tagYourEvent {margin-left:30px; min-height:305px;} */
+
+/* .rowContent.eventLocation .locationContainer label,
+.rowContent.additionalDetails .organizerDetailsContainer label,
+.rowContent.additionalDetails .eventDescription label,
+.rowContent.additionalDetails .tagYourEvent label {min-width: 150px;} */
+/* .rowContent label{min-width: 150px;} */
+/* .rowContent.eventDateTimeSlots .toggleButtonWidget,
+.rowContent.eventDateTimeSlots .datesTimeSlotsWidget,
+.rowContent.eventDateTimeSlots .changeTimezoneBtn {margin-left:210px;} */
+
+/* .rowContent.eventDateTimeSlots{}
+.rowContent.eventDateTimeSlots .addDateBtn {float:none; display:block; background: red;}
+.rowContent.eventDateTimeSlots .datesTimeSlotsWidget{margin: 20px 0 0; width: 520px;}
+.rowContent.eventDateTimeSlots .datesTimeSlotsWidget .groupItem {float: left; margin: 0 5px 0 0;}
+.rowContent.eventDateTimeSlots .datesTimeSlotsWidget .dijitTimeTextBox {width:120px;}
+.rowContent.eventDateTimeSlots .datesTimeSlotsWidget .ebPlatformRichTextBoxWidget.descrizione {width:200px; float:left;}
+
+#content .rowContent.eventDateTimeSlots .datesTimeSlotsWidget .ebPlatformRichTextBoxWidget.capienza {width:50px; float:left; margin-right:10px;}
+.rowContent.eventDateTimeSlots .calendarContainer {display:none;}
+.rowContent.eventDateTimeSlots .addNewBtnContainerTimeSlot {display:none;}
+.rowContent.eventDateTimeSlots .nota {width:250px; height:200px; clear:none; margin-left:10px;}
+
+.rowContent.eventDateTimeSlots .dateWidget .date{font-size: 22px; color:#f26524; font-weight: 600; margin: 0 30px 0 0;}
+.rowContent.eventDateTimeSlots .dateWidget .dijitButton{color:#f26524;}
+
+.rowContent.eventDateTimeSlots .timeSlotWidget .tooltipsContainer {position:relative; left:0; top:0;}
+.rowContent.eventDateTimeSlots .timeSlotWidget .tooltipsContainer.visible {height:20px;}
+.rowContent.eventDateTimeSlots .timeSlotWidget .tooltipsContainer .descriptionTooltip {width:400px; position:absolute; z-index:10; top:0; left:250px;}
+.rowContent.eventDateTimeSlots .timeSlotWidget .tooltipsContainer .capacityTooltip {width:600px; position:absolute; z-index:20; top:0; right:0; text-align:right;} */
+
+
+/* .rowContent.registrationClosingDeadline .toggleButtonWidget {margin-left:210px;}
+.rowContent.registrationClosingDeadline .registrationClosingDeadlineContainer {width:510px;}
+.rowContent.registrationClosingDeadline .registrationClosingDeadlineContainer .selectsContainer{margin: 20px 0 0 0;}
+.rowContent.registrationClosingDeadline .registrationClosingDeadlineContainer .dijitComboBox {margin: 0 20px 0 0; width: 160px;} */
+
+/* .rowContent.registrationClosingDeadline .registrationClosingDeadlineWidget {margin-left:30px;} */
+
+
+/* .rowContent.registrationClosingDeadline .registrationStatusBox {border:1px solid #ccc;}
+.registrantListWidget .registrationStatusBox {border:1px solid #ccc;} */
+
+/* .rowContent .additionalDetailsContainer {margin-left:200px;} */
+
+/* .rowContent.organizerDetails .organizerDetailsContainer {border:1px none red; width:700px;}
+.rowContent .tagYourEvent .nota {margin-left:130px;} */
+
+/* .changeTimeZoneDialogWidgetDialog .dijitDialogCloseIcon{display:none;} */
+
+/* ---- Manage Guests ---- */
+
+/* .listSelectionWidget .toggleButtonWidget {float: left; margin-right:10px;} */
+
+/* .attendeeListWidgetGridContainer,
+.inviteListWidgetGridContainer,
+.registrantListWidgetGridContainer,
+.completeListWidgetGridContainer {overflow-x: scroll;} */
+
+/* .inviteListWidget .rowContent .disclaimer {width:500px; border:1px solid #aaa; background-color:#ccc; padding:5px; font-size:11px;}
+.inviteListWidget .rowContent .disclaimer h4 {font-size:14px; font-weight: bold;}
+ .inviteListWidget .rowContent.noListWarning {width:960px; height:300px; border:1px solid #ccc; text-align:center;}
+.inviteListWidget .rowContent.noListWarning .noList {margin-top:200px; font-size:16px;}*/
+
+.registrantListWidget .registrationStatusBox {width:500px; margin-bottom:10px;}
+
+/* bottoncino NewUser */
+/* .attendeeListWidget .tableLista .field-inseritoDaApp,
+.completeListWidget .tableLista .field-inseritoDaApp{text-align:center;}
+.attendeeListWidget .tableLista table .icoNew,
+.completeListWidget .tableLista table .icoNew{text-indent:-9000px; background:url(/img/sprites.png) no-repeat -170px -1280px; width:22px; height:20px; display:inline-block;} */
+/* .attendeeListWidget .tableLista table .icoAlreadyPresent,
+.completeListWidget .tableLista table .icoAlreadyPresent{text-indent:-9000px; background:url(/img/person.png) no-repeat; width:22px; height:20px; display:inline-block;} */
+
+
+
+/* ---- Communication ---- */
+/* .communicationWidget .communicationsListWidget .addCommunicationBtnsContainer .badgedButtonWidget {float:left; margin-right:20px;} */
+/* .communicationWidget .communicationsListWidget .noCommunicationsBox {width:960px;; margin-top:10px; border:1px solid #ccc;}
+.communicationWidget .communicationsListWidget .noCommunicationsBox .text {text-align:center; width:200px;}
+.communicationWidget .communicationsListWidget .noCommunicationsBox .text h5 {font-weight:bold;}
+.communicationWidget .communicationsListWidget .noCommunicationsBox .text p {font-size:11px; width:80%; margin: 10px auto 0 auto;}
+ */.communicationWidget .communicationsListWidget .communicationsBox,
+.communicationWidget .communicationsListWidget .communicationsBox .confirmationEmailsBox {margin-top: 10px;}
+/* .communicationWidget .communicationsListWidget .communicationsBox h3 {margin:0;}
+.communicationWidget .communicationsListWidget .communicationsBox h4 {color:#f76600; font-weight:bold; font-size:13px;} */
+
+/* .communicationWidget .communicationsListWidget .enrichedNameContainer span.status {width:15px; height:15px; display:inline-block;}
+.communicationWidget .communicationsListWidget .enrichedNameContainer span.status.sent {background-color: green;}
+.communicationWidget .communicationsListWidget .enrichedNameContainer span.status.scheduled {background-color: orange;}
+.communicationWidget .communicationsListWidget .enrichedNameContainer span.status.not_scheduled {background-color: red;} */
+
+/* 
+.communicationWidget .communicationsListWidget .tableLista table .dijitButton .dijitButtonText {width: 70px; background:green; text-indent:0; color:white;}
+.communicationWidget .communicationsListWidget .tableLista table .dijitButton.editButton .dijitButtonText {width: 73px; background:#ccc;} */
+/* .communicationWidget .communicationsListWidget .tableLista .dgrid-cell.field-actions {width:110px;} */
+
+html body div.scheduledCommunicationWidgetRecipientsTooltip {width:300px; white-space: normal; line-height: normal;}
+/* .communicationWidget .recipientsSelectionWidget .categorySelectionRow>* {float:left; margin-right:10px; }
+.communicationWidget .recipientsSelectionWidget .categorySelectionRow .indicator{height: 35px; line-height: 35px;}
+.communicationWidget .recipientsSelectionWidget .categorySelectionRow .indicator img{vertical-align: middle;} */
+/* .communicationWidget .recipientsSelectionWidget .categorySelectionRow .indicatorContainer {margin-left: 10px;} */
+/* .communicationWidget .recipientsSelectionWidget .filterFieldSelectionRow .dijitComboBox {width:500px;}
+
+.communicationWidget .recipientsSelectionWidget .firstColumn { width:170px; display:inline-block; border:1px solid red;}
+.communicationWidget .recipientsSelectionWidget .secondColumn { width:500px; display:inline-block; margin-right:10px;} */
+
+/* .communicationWidget .recipientsSelectionWidget .indicatorContainer {width:150px;} */
+/* .communicationWidget .recipientsSelectionWidget .filterContainer {width:700px;} */
+.communicationWidget .recipientsSelectionWidget .invalidFilterWarning span {color:#f76600;}
+
+/* .communicationWidget .registrationConfirmationEmailTemplateWidget .operationTypeContainer {width:250px;} */
+/* .communicationWidget .scheduledCommunicationTemplateWidget .leftColumn,
+.communicationWidget .scheduledCommunicationTemplateWidget .rightColumn,
+.communicationWidget .registrationConfirmationEmailTemplateWidget .leftColumn,
+.communicationWidget .registrationConfirmationEmailTemplateWidget .rightColumn {float:left; border:1px none #ccc;}
+
+.communicationWidget .scheduledCommunicationTemplateWidget .leftColumn,
+.communicationWidget .registrationConfirmationEmailTemplateWidget .leftColumn {width:640px; min-height:400px;} */
+/* 
+.communicationWidget .scheduledCommunicationTemplateWidget .rightColumn,
+.communicationWidget .registrationConfirmationEmailTemplateWidget .rightColumn { margin-left:35px; min-height:400px; min-width: 200px;} */
+
+/* .communicationWidget .scheduledCommunicationTemplateWidget .leftColumn .row,
+.communicationWidget .registrationConfirmationEmailTemplateWidget .leftColumn .row {width:100%;} */
+/* 
+.communicationWidget .scheduledCommunicationTemplateWidget .leftColumn .row>div,
+.communicationWidget .registrationConfirmationEmailTemplateWidget .leftColumn .row>div {position:relative; top:0; left:0;}  */
+
+/* 
+.communicationWidget .scheduledCommunicationTemplateWidget .leftColumn .header,
+.communicationWidget .registrationConfirmationEmailTemplateWidget .leftColumn .header {width:100%; height:100px;} */
+
+/* .communicationWidget .scheduledCommunicationTemplateWidget .leftColumn .disabledZoneMask,
+.communicationWidget .registrationConfirmationEmailTemplateWidget .leftColumn .disabledZoneMask {position:absolute; width:100%; height:100%; z-index:10; background-image:url(/img/transpWhite50.png); display:none;} */
+
+/* .communicationWidget .scheduledCommunicationTemplateWidget .leftColumn .editBtnContainer,
+.communicationWidget .scheduledCommunicationTemplateWidget .leftColumn .hideShowBtnContainer,
+.communicationWidget .registrationConfirmationEmailTemplateWidget .leftColumn .editBtnContainer,
+.communicationWidget .registrationConfirmationEmailTemplateWidget .leftColumn .hideShowBtnContainer {position:absolute; z-index:20;} */
+
+/* .communicationWidget .scheduledCommunicationTemplateWidget .leftColumn .header .headerText,
+.communicationWidget .registrationConfirmationEmailTemplateWidget .leftColumn .header .headerText {position:absolute; z-index:5; left:10px; top:20px;}
+ */
+/*  .communicationWidget .scheduledCommunicationTemplateWidget .leftColumn .header .editBtnContainer,
+ .communicationWidget .registrationConfirmationEmailTemplateWidget .leftColumn .header .editBtnContainer {top:10px; right:130px;} */
+
+/* 
+.communicationWidget .scheduledCommunicationTemplateWidget .leftColumn .header .hideShowBtnContainer,
+.communicationWidget .registrationConfirmationEmailTemplateWidget .leftColumn .header .hideShowBtnContainer {top:10px; right:10px;}
+ */
+/* .communicationWidget .scheduledCommunicationTemplateWidget .leftColumn .logoEventDetails,
+.communicationWidget .registrationConfirmationEmailTemplateWidget .leftColumn .logoEventDetails {height:120px; width:100%;}
+ *//* .communicationWidget .scheduledCommunicationTemplateWidget .leftColumn .logoEventDetails .editBtnContainer,
+.communicationWidget .registrationConfirmationEmailTemplateWidget .leftColumn .logoEventDetails .editBtnContainer {top:5px; left:100px;} */
+/* .communicationWidget .scheduledCommunicationTemplateWidget .leftColumn .logoEventDetails .hideShowBtnContainer,
+.communicationWidget .registrationConfirmationEmailTemplateWidget .leftColumn .logoEventDetails .hideShowBtnContainer {top:5px; right:10px;} */
+
+/* .communicationWidget .scheduledCommunicationTemplateWidget .leftColumn .logoEventDetails .logoContainer,
+.communicationWidget .scheduledCommunicationTemplateWidget .leftColumn .logoEventDetails .eventDetailsPlaceHolder,
+.communicationWidget .registrationConfirmationEmailTemplateWidget .leftColumn .logoEventDetails .logoContainer,
+.communicationWidget .registrationConfirmationEmailTemplateWidget .leftColumn .logoEventDetails .eventDetailsPlaceHolder {float:left; margin-top:10px;} */
+
+/* .communicationWidget .scheduledCommunicationTemplateWidget .leftColumn .logoEventDetails .logoContainer,
+.communicationWidget .registrationConfirmationEmailTemplateWidget .leftColumn .logoEventDetails .logoContainer {width:210px; height:100%; position:relative;} */
+
+/* .communicationWidget .scheduledCommunicationTemplateWidget .leftColumn .logoEventDetails .logoContainer img,
+.communicationWidget .registrationConfirmationEmailTemplateWidget .leftColumn .logoEventDetails .logoContainer img {position:absolute; max-width:95%; max-height:95%;} */
+
+/* .communicationWidget .scheduledCommunicationTemplateWidget .leftColumn .logoEventDetails .eventDetailsPlaceHolder,
+.communicationWidget .registrationConfirmationEmailTemplateWidget .leftColumn .logoEventDetails .eventDetailsPlaceHolder {width:430px; height:100%;} */
+
+
+.communicationWidget .scheduledCommunicationTemplateWidget .leftColumn .logoEventDetails .eventDetailsPlaceHolder img,
+.communicationWidget .registrationConfirmationEmailTemplateWidget .leftColumn .logoEventDetails .eventDetailsPlaceHolder img {max-height:100px;}
+
+/* .communicationWidget .scheduledCommunicationTemplateWidget .leftColumn .eventImage .editBtnContainer,
+.communicationWidget .registrationConfirmationEmailTemplateWidget .leftColumn .eventImage .editBtnContainer {top:10px; right:130px;}
+.communicationWidget .scheduledCommunicationTemplateWidget .leftColumn .eventImage .hideShowBtnContainer,
+.communicationWidget .registrationConfirmationEmailTemplateWidget .leftColumn .eventImage .hideShowBtnContainer {top:10px; right:10px;}
+ */
+/* .communicationWidget .scheduledCommunicationTemplateWidget .leftColumn .additionalInformation,
+.communicationWidget .registrationConfirmationEmailTemplateWidget .leftColumn .additionalInformation {min-height:70px; width:100%;} */
+
+/* .communicationWidget .scheduledCommunicationTemplateWidget .leftColumn .additionalInformation .editBtnContainer,
+.communicationWidget .registrationConfirmationEmailTemplateWidget .leftColumn .additionalInformation .editBtnContainer {top:10px; right:130px;}
+.communicationWidget .scheduledCommunicationTemplateWidget .leftColumn .additionalInformation .hideShowBtnContainer,
+.communicationWidget .registrationConfirmationEmailTemplateWidget .leftColumn .additionalInformation .hideShowBtnContainer {top:10px; right:10px;}
+ */
+/* .communicationWidget .scheduledCommunicationTemplateWidget .leftColumn .registrationBtn {height:100px; width:100%; background: red;} */
+/* .communicationWidget .scheduledCommunicationTemplateWidget .leftColumn .registrationBtn .editBtnContainer {top:10px; right:130px;}
+.communicationWidget .scheduledCommunicationTemplateWidget .leftColumn .registrationBtn .hideShowBtnContainer {top:10px; right:10px;} */
+
+/* 
+.communicationWidget .scheduledCommunicationTemplateWidget .leftColumn .registrationBtn .btnContainer {position:absolute; z-index:5; top:20px; left:250px;}
+.communicationWidget .registrationConfirmationEmailTemplateWidget .leftColumn .barcode .hideShowBtnContainer {top:10px; right:10px;}
+ */
+
+/* 
+.communicationWidget .scheduledCommunicationTemplateWidget .leftColumn .footerImage .editBtnContainer,
+.communicationWidget .registrationConfirmationEmailTemplateWidget .leftColumn .footerImage .editBtnContainer {top:10px; right:130px;}
+.communicationWidget .scheduledCommunicationTemplateWidget .leftColumn .footerImage .hideShowBtnContainer,
+.communicationWidget .registrationConfirmationEmailTemplateWidget .leftColumn .footerImage .hideShowBtnContainer {top:10px; right:10px;}
+ */
+/* .communicationWidget .scheduledCommunicationTemplateWidget .leftColumn .footer,
+.communicationWidget .registrationConfirmationEmailTemplateWidget .leftColumn .footer {width:100%; height:30px; position:relative; top:0; left:0;} */
+/* .communicationWidget .scheduledCommunicationTemplateWidget .leftColumn .footer .hideShowBtnContainer,
+.communicationWidget .registrationConfirmationEmailTemplateWidget .leftColumn .footer .hideShowBtnContainer {top:0; right:10px;} */
+
+/* .communicationWidget .scheduledCommunicationTemplateWidget .itemForm label,
+.communicationWidget .registrationConfirmationEmailTemplateWidget .itemForm label {min-width: 70px;} */
+
+
+/* .communicationWidget .scheduledCommunicationTemplateWidget .dijitButton.editButton,
+.communicationWidget .scheduledCommunicationTemplateWidget .dijitToggleButton.hideShowButton,
+.communicationWidget .registrationConfirmationEmailTemplateWidget .dijitButton.editButton,
+.communicationWidget .registrationConfirmationEmailTemplateWidget .dijitToggleButton.hideShowButton {background-image:url(/img/transpBlack25.png); border:1px solid #aaa; padding:5px; min-width:90px;} */
+
+/* .communicationWidget .registrationConfirmationEmailTemplateWidget .personalDetailsTitle,
+.communicationWidget .registrationConfirmationEmailTemplateWidget .eventDetails {float:left; width:50%;} */
+/* 
+.communicationWidget  .dijitIcon.editButtonIcon,
+.communicationWidget  .dijitIcon.hideButtonIcon,
+.communicationWidget  .dijitIcon.showButtonIcon {width:15px; height:15px; padding:3px; margin-right:5px;} */
+
+
+/* .communicationWidget  .dijitIcon.editButtonIcon {background-color:cyan;}
+.communicationWidget  .dijitIcon.hideButtonIcon {background-color:navy;}
+.communicationWidget  .dijitIcon.showButtonIcon {background-color:orange;} */
+
+/* ================================================== */
+/* ==========  Elementi form ========== */
+/* .dijitContentPane label{float:left; text-align: left; width: auto; margin:0 10px 0 0; line-height:30px;} */
+
+/* ### Input form ### */
+/* .dijitTextBox{background:#fcfcfc; border-radius:4px; padding:5px; width:290px; height:20px; margin:0;} */
+/* label{font-size:14px; display:block;} */ 
+/* .dijitTextBox{border:none; background-image:none; background:#fff; color:#666; font-size:14px;} */
+
+/**** RichTextBoxWidget ****/
+/* #content .ebPlatformRichTextBoxWidget .dijitTextBox, */
+/* #content .ebPlatformRichTextBoxWidget .tooltip {width:100%;} */
+/*#content .ebPlatformRichTextBoxWidget .dijitTextBox.hover {border:2px solid #4d4d4d;}
+#content .ebPlatformRichTextBoxWidget .dijitTextBox.focused {border:1px solid $arancione;} */
+/* #content .ebPlatformRichTextBoxWidget .remainingChars {margin-left:10px;} */
+
+.richTextBoxContainer {display:inline-block;} /* Container per allineare il tip */
+
+/**** toggleButtonWidget ****/
+/* .toggleButtonWidget {background:#fcfcfc; border:2px solid #e6e6e6; border-radius:4px; position:relative; top:0; left:0; width:230px; height:275px; display:block; text-align:center; font-size:13px; overflow: hidden; color:#999; font-size: 12px; line-height: 120%;}
+.toggleButtonWidget:hover{color:#999;}
+.toggleButtonWidget img {margin:0;}
+.toggleButtonWidget h4{font-weight: 500; font-size:22px; color:#f26524; margin: 15px 0 10px 0; line-height: 90%;}
+.toggleButtonWidget .content{padding: 30px 10px;}
+.toggleButtonWidget .hover {display:none; text-align: left; padding:40px 20px 20px 20px;}
+.toggleButtonWidget .hover h4 {font-weight: 700; font-size: 20px; margin: 0 0 20px 0;}
+.toggleButtonWidget:hover .hover {display:block;}
+.toggleButtonWidget.checked:hover .hover {display:none;}
+.toggleButtonWidget.checked{border:4px solid #F76600;}
+
+.eventType .toggleButtonWidget.checked{background: #F76600; color:#fff;}
+.eventType .toggleButtonWidget.checked h4{color:#fff;} */
+
+/**** badgedButtonWidget ****/
+/* .badgedButtonWidget .hover {display:none; position:absolute; top:0; left:0; z-index:10; width:100%; height:100%; background:white;} */
+
+/* .badgedButtonWidget {background:#fcfcfc; border:2px solid #e6e6e6; border-radius:4px; position:relative; top:0; left:0; width:230px; height:275px; display:block; text-align:center; font-size:13px; overflow: hidden; color:#999; font-size: 12px; line-height: 120%;}
+.badgedButtonWidget img {margin:0;}
+.badgedButtonWidget h4 {font-weight: 500; font-size:22px; color:#f26524; margin: 15px 0 10px 0; line-height: 90%;}
+.badgedButtonWidget .content {padding: 30px 10px;}
+.badgedButtonWidget .hover h4 {font-weight: 700; font-size: 20px; margin: 0 0 20px 0;}
+.badgedButtonWidget .hover {display:none; padding:40px 20px 20px 20px;}
+.badgedButtonWidget:hover .hover {display:block;} */
+
+
+/* .badgedButtonWidget .badge {display:none; border-radius: 4px; color: #FFFFFF; display: none; font-size: 21px; font-weight: 500; padding: 10px; position: absolute; right: 10px; top: 10px; z-index: 20; background: $orange;} */
+
+
+/**** divDropDownButtonWidget ****/
+/* .divDropDownButtonWidget {cursor:pointer;}
+.divDropDownButtonWidget .icon {width:15px; height:15px; background: url(/img/iconOrangeArrowDx.png); margin-right:5px; display: inline-block}
+.divDropDownButtonWidget .icon.opened {background: url(/img/iconOrangeArrowDown.png);}
+.divDropDownButtonWidget .title {font-weight:bold; font-size:14px; color:#f76600;}
+ */
+/**** DialogWithCloseButtonWidget ****/
+.dialogWithCloseButtonWidget .dijitDialogPaneContent {text-align:center;}
+.dialogWithCloseButtonWidget .dijitContentPane.textPane {text-align:left;}
+.dialogWithCloseButtonWidget span.dijitButton {width:70px; margin:5px auto 0 auto;}
+
+/**** ColorPickerWidget ****/
+/* .colorPickerWidget label {display:block; font-size:14px; font-weight: 300;}
+.colorPickerWidget .dijitDropDownButton{width: 160px;}
+.colorPickerWidget .dropDownBtnContainer,
+.colorPickerWidget .colorCodeContainer {float:left; margin-right:5px;}
+.colorPickerWidget .colorCodeContainer .dijitValidationTextBox {width:100px; padding: 5px 15px;}
+.colorPickerWidget .dropDownBtnContainer .dijitDropDownButton .dijitButtonNode {width:100px;}
+.colorPickerWidget .dijitDropDownButton .dijitArrowButtonInner{display: none;} */
+
+/**** EditTextWithEditorDialogWidget ****/
+.editTextWithEditorDialogWidget {width:600px; min-height:400px;}
+
+/*** LanguageSelectionWidget ***/
+/* .languageSelectionWidget .dijitChecked {background-color:#f26524;}
+.languageSelectionWidget .dijitChecked .dijitButtonNode {color:white;}
+.languageSelectionWidget .dijitIcon.present {width:15px; height:15px; background: url(/img/spunta.png)} */
+
+/*** DEBUG ***/
+/* #header {border:1px none red;}
+#fixedStrip {border:1px none green;}
+#navbar {border:1px none red;}
+#contentHeader {border:1px none red;} */

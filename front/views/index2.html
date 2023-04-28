@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>OASIS MENTALE</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="row ">
+                <div class="col">
+                    <img src="./images/logo.png" class="logo" alt="Logo">
+                </div>
+                <div class="col">
+                    <div class="text-end">
+                        <span class="text-secondary mx-4">Contactez nous</span>
+                        <a href="#" ><img src="images/WhatsApp_icon.png"></a>
+                        <a href="#" ><img src="images/facebook-icon.png"></a>
+                        <a href="#" ><img src="images/instagram-icon.png"></a>
+                        <a href="#" ><img src="images/youtube-icon.png"></a>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span>menu</span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="#"><i class="bi bi-house-door-fill"></i>&nbsp;Acceuil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"><i class="bi bi-book-fill"></i>&nbsp;Consultation</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="page3.html"><i class="bi bi-file-text-fill"></i>&nbsp;Rendez-vous</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"><i class="bi bi-chat-fill"></i>&nbsp;Forum</a>
+            </li>
+            
+
+            <li class="nav-item">
+                <a class="nav-link" href="page_annonce.php"><i class="bi bi-megaphone-fill"></i>&nbsp;Annonces</a>
+          </li>
+           <li class="nav-item">
+                <a class="nav-link" href="product_list.php"><i class="bi bi-cart-fill"></i>&nbsp;Produits</a>
+          </li>
+              <li class="nav-item">
+                    <a class="nav-link" href="#footer"><i class="bi bi-info-circle-fill"></i>&nbsp;A propos</a>
+              </li>
+            
+              <li class="nav-item">
+                <a class="nav-link" href="#x"><i class="bi bi-pen-fill"></i>login</a>
+          </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <nav>
+    <section id="abt">
+        <div class="container">
+            <div class="row">
+                <div class="col-8 about">
+                    Protégez votre santé avec<br><span class="fontchange fst-italic"> <strong>OasisMentale</strong> </span><p class="clrchange fontchange">Votre médecin est à portée de clic.</p>
+                </div>
+                <div class="col-4">
+                    <img class="pic2" src="images/Doctor-pana.png">
+                    <img class="pic" src="images/Doctor-cuate.png">
+                </div>
+            </div>
+            <br><br>
+            <div class="row">
+                <div class="col my-5">
+                    <div class="btn-group">
+                        <button class="rc">Nom docteur</button>
+                        <button class="cat">Specialité</button>
+                        <button class="clique">Clique</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br><br><br>
+    <section id="login">
+        <div class="container-fluid ">
+            <div class="row">
+                <div class="col-6" >
+                    <span class="text-center about"><button style="border : 0px ; background-color: white  ; color : #136989" onclick="hid_function_y()">Connectez-vous</button> ou <button style="border : 0px ; background-color: white  ; color : #136989"onclick="hid_function_x()"> créez un compte</button></span>
+                    <img src="images/Public health-bro.png" class="imglogin">
+                </div>
+                <div class="col-6" id="x">
+                    <span class="text-begin about2">Bienvenue</span><br><br>
+                    <span>entrez vos information s'il vous avez un compte</span><br><br><br><br>
+                    <form>
+                        <label for="email" class="my-1">Email</label><br>
+                        <input type="email" id="email"><br><br>
+                        <label for="pwd" class="my-1">Mot de passe</label><br>
+                        <input type="password" id="pwd"><br><br>
+                        <a href="#">Vous avez oublié votre mot de passe ?</a><br><br>
+                        
+                        <input type="submit" class="register" value="Connexion">
+                        <div class="row">
+                            <div class="col-5"><hr></div>
+                            <div class="col-1 ou">Où</div>
+                            <div class="col-5 scndline"><hr></div>
+                        </div><br>
+                        
+                        <button class="ggl">
+                            <div class="row">
+                                <div class="col-3">
+                                    <img src="images/icons8-logo-google-48.png">
+                                </div>    
+                                <div class="col-5 mx-4 my-2">
+                                    S'inscrire avec google
+                                </div>
+                            </div>
+                        </button>   
+                    </form>
+                </div>
+
+                <div class="col-6" id="y" style="display: none;">
+                    <span class="text-begin about2">Bienvenue</span><br><br>
+                    <span>entrez vos information s'il vous avez un compte</span><br>
+                    <form>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <label for="email" class="my-1">Email</label><br>
+                                    <input type="email" id="email" >
+                                </div>
+                                <div class="col-6">
+                                    <label for="pwd" class="my-1">Mot de passe</label><br>
+                                    <input type="password" id="pwd"><br>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <label for="name" class="my-1">Nom</label><br>
+                                    <input type="text" id="name">
+                                </div>
+                                <div class="col-6">
+                                    <label for="cpwd" class="my-1">Verification mot de passe</label><br>
+                                    <input type="password" id="cpwd"><br>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <label for="prenom" class="my-1">Prenom</label><br>
+                                    <input type="text" id="prenom">
+                                </div>
+                                <div class="col-6">
+                                    <label for="dte" class="my-1 ">Date de naissance</label><br>
+                                    <input type="date" id="dte"><br>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <label for="cin" class="my-1">CIN</label><br>
+                                    <input type="text" id="cin">
+                                </div>
+                                <div class="col-6">
+                                    <label for="gv" class="my-1">Gouverorat</label><br>
+                                    <input type="text" id="gv"><br><br>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">Vous avez oublié votre mot de passe ?</a><br><br>
+                        <input type="submit" class="register" value="Connexion" onclick="add()" >
+                        <div class="row">
+                            <div class="col-5"><hr></div>
+                            <div class="col-1 ou">Où</div>
+                            <div class="col-5 scndline"><hr></div>
+                        </div><br>
+                        
+                        <button class="ggl">
+                            <div class="row">
+                                <div class="col-3">
+                                    <img src="images/icons8-logo-google-48.png">
+                                </div>    
+                                <div class="col-5 mx-4 my-2">
+                                    S'inscrire avec google
+                                </div>
+                            </div>
+                        </button>
+                    </form>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+    <footer id="contact" class="bg-dark">
+        <br><br><br>
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <h3 style="font-weight: bold; color : #1B96C4;">About us</h3><br>
+                    <p style="color : white ;">Our fitness platform offers a variety of services to help new users achieve their health and fitness goals</p><br>
+                    <i class="bi bi-facebook"></i>&nbsp;&nbsp;
+                    <i class="bi bi-instagram"></i>&nbsp;&nbsp;
+                    <i class="bi bi-twitter"></i>&nbsp;&nbsp;
+                    <i class="bi bi-linkedin"></i>&nbsp;&nbsp;
+                </div>  
+                <div class="col-5" >
+                    <h3 style="font-weight: bold; color : #1B96C4;">Contact Info</h3><br>
+                    <p><span class="text-secondary">Address:</span><br>
+                       <span style="color : white">ESPRIT el Ghazela, Ariana</span> </p>
+                     <p>
+                        <span class="text-secondary">Phone number:</span><br>
+                        <span style="color : white">+216 53583931</span>
+                     </p>   
+                     <p>
+                        <span class="text-secondary"> Email:</span><br>
+                        <span style="color : white">exemple@suffixe.com</span>
+                     </p> 
+                </div> 
+                <div class="col-3">
+                    <h3 class="" style="font-weight: bold; color : #1B96C4;">Quick link</h3><br>
+                    <span  style="color : white ;"><a href="#abt">Home</a><br><br>
+                    <a href="#login" style="color : white ;">Register</a><br><br>
+                    <a href="#contact" style="color : white ;">Contact</a><br><br>
+                    <a href="#" style="color : white ;">About us</a><br><br></span>
+                </div>   
+            </div>
+            <br><br>
+            <div class="row">
+                <div  class="col">
+                   <p class="text-secondary text-center"> © Copyright ©2023 All rights reserved , made by Yosri Raboudi & Sarra Laabidi & Aziz Jemli & Louay Ellouz & Ranim Maaref 
+                </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body><script>
+    function hid_function_x(){
+        var div_login=document.getElementById("x");
+        var div_signup=document.getElementById("y");
+        div_login.style.display="none";
+        div_signup.style.display="block";
+    }
+    function hid_function_y(){
+        var div_login=document.getElementById("x");
+        var div_signup=document.getElementById("y");
+        div_login.style.display="block";
+        div_signup.style.display="none";
+    }
+    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+</html>
+            
+
+
+
+
+

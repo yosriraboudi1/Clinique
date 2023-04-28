@@ -1,0 +1,153 @@
+
+.product-thumb{
+	width: 240px ;
+	height: auto;
+	display: inline-block;
+	margin: 55px ;
+	float: left;
+}
+
+.product-thumb-image{
+	width: 300px ;
+	height: auto;
+	display: inline-block;
+	border : 1px solid black;
+	position: relative;
+	overflow: hidden;
+}
+.product-thumb-image img {
+	width: 100% ;
+}
+.quickview-title{
+	width: 100% ;
+	padding: 10px 0 ;
+	text-align: center;
+	background-color: gray ;
+	position: absolute;
+	top : -100% ;
+	left: 0 ;
+	font-size: 17px ;
+	font-weight: italic ;
+	color: #ffffff ;
+	cursor: pointer; 
+	opacity: 10;
+	-webkit-transition : 300ms;
+	-moz-transition : 300ms;
+}
+.product-thumb-image:hover .quickview-title {
+	top:45%;
+	opacity: 100 ;
+}
+.product-thumb-title{
+	width: 100% ;
+	height: auto;
+	padding: 10px 0 ;
+	font-weight: normal;
+	font-size: 18px ;
+
+}
+.product-thumb-title h3{
+margin: 0 ;
+padding-bottom: 5px ;
+color: #303030 ;
+font-size: 24px ;
+}
+.product-thumb-title h3 span {
+	color: green ;
+	font-size: 20px ;
+
+}
+.product-view {
+	position: absolute;
+	display: none;
+	width: 800px ;
+	height: auto;
+	padding: 25px ;
+	border : 1px solid black ;
+	top: 50% ;
+	left: 50% ;
+	box-shadow: 0 5px 25px rgb(0,0,0,0.3) ;
+	transform: translate(-50%,-50%);
+	-webkit-transform : translate(-50%,-50%);
+	-moz-transform : translate(-50%,-50%);
+	background-color: #ffffff ;
+	z-index: 100;
+}
+.close-btn{
+	position: absolute;
+	right: 0 ;
+	top: 0;
+	margin: 5px 10px 0;
+	font-size: 22px ;
+	color: #929292 ;
+	transform: scaleY(0.8);
+	cursor: pointer;
+}
+.product-big-image{
+	width: 45% ;
+	height: auto;
+	display: inline-block;
+	float: left;
+}
+.product-big-image img{
+width: 100% ;
+border: 3px solid #333;
+}
+.product-big-desc{
+	width: 48% ;
+	height: auto;
+	display: inline-block;
+	float: right;
+	padding-right: 20px ;
+}
+.product-big-desc h2 {
+	margin: 0 ;
+	font-weight: lighter;
+	padding-bottom: 10px ;
+}
+.product-big-desc h5{
+	font-weight: lighter;
+color: #2a2a2a ;
+margin: 0 ;
+padding-bottom: 8px ;
+font-size: 18px ;
+}
+.price {
+	width: 100% ;
+	float: left;
+	padding-bottom: 15px ;
+}
+.price .oldprice{
+	font-size: 24px ;
+	margin: 0px ;
+	color: #a3a3a3 ;
+	border-bottom:1px solid #333 ;
+	display: inline-block;
+	width: auto;
+}
+.price .oldprice sup{
+	color: red ;
+	padding-left: 9px ;
+	font-weight: lighter;
+}
+.price .newprice {
+font-size: 24px ;
+	margin: 0px ;
+	color: #333 ;
+	
+	width: auto;
+}
+.buybutton{
+	width: 200px ;
+	border-radius: 50px;
+	background-color: green ;
+	color: white ;
+	padding: 10px ;
+	font-size: 15px ;
+	border:none;
+	font-weight:bold;
+	position: absolute;
+	text-align: center;
+
+}
+

@@ -1,0 +1,426 @@
+var dojoConfig = {
+	async : true,
+	waitSeconds : 30, // per evitare messaggi di errore: il default è 15
+	// locale: 'it-it',
+	locale : typeof ebplatform !== "undefined" ? ebplatform.config.beLocale.toLowerCase().replace("_", "-") : 'it-it',
+	timezoneLoadingScheme: "lazyLoad",
+	defaultZoneFile: "europe",
+	// extraLocale: ["en-us"],
+	baseUrl : "/js/",
+	/*
+	 * se fosse true i moduli di primo livello non
+	 * specificati ne in packages ne in paths
+	 * dovrebbero essere sibling di dojo, se false
+	 * devono trovarsi all'interno di baseUrl
+	 */
+	tlmSiblingOfDojo : false,
+	trace: {
+		"loader-inject": 0,
+        "loader-define": 0,
+        "loader-exec-module": 0,
+        "loader-run-factory": 0,
+        "loader-finish-exec": 0,
+        "loader-define-module": 0,
+        "loader-circular-dependency": 0
+	},
+	/*
+	 *	Per retrocompatibilita' con i js custom
+	 */
+	aliases: [
+		["built/iscrizione", "built/iscrizionefull"]
+	], 
+	packages: [
+		//Semantica del trees: [source,dest,ignore]
+		/*
+		 * dojo
+		 */
+		{name: "dojo", location: "lib/dojo-1.13.0/dojo", trees: [[".", ".", /(\/\.)|(~$)|(CVS)/]]}, 
+		{name: "dijit", location: "lib/dojo-1.13.0/dijit", trees: [[".", ".", /(\/\.)|(~$)|(CVS)/]]},
+		{name: "dojox", location: "lib/dojo-1.13.0/dojox", trees: [[".", ".", /(\/\.)|(~$)|(CVS)/]]},
+		
+		/*
+		 * dgrid
+		 */
+		{name: "dgrid", location: "lib/dgrid-0.3.17/dgrid", trees: [[".", ".", /(\/\.)|(~$)|(CVS)/]]},
+		{name: "put-selector",	location: "lib/dgrid-0.3.17/put-selector", trees: [[".", ".", /(\/\.)|(~$)|(CVS)/]]},
+		{name: "xstyle", location: "lib/dgrid-0.3.17/xstyle", trees: [[".", ".", /(\/\.)|(~$)|(CVS)/]]},
+
+		/*
+		 * cometd
+		 */
+		{name: "cometd-org", location: "lib/cometd-dojo-3.1.4_eb/org", main: "cometd", trees: [[".", ".", /(\/\.)|(~$)|(CVS)/]]},
+		
+		/*
+		 * varie
+		 */
+		{name: "3rdparty", location: "lib/3rdparty", trees: [[".", ".", /(\/\.)|(~$)|(CVS)/]]},
+		{name: "clipboard", location: "lib/clipboard-2.0.1", trees: [[".", ".", /(\/\.)|(~$)|(CVS)/]]},
+
+		/*
+		 * Eventboost
+		 */
+		{name: "app", location: "app", trees: [[".", ".", /(\/\.)|(~$)|(CVS)/]]},
+		{name: "ebPlatform", location: "lib/ebPlatform", trees: [[".", ".", /(\/\.)|(~$)|(CVS)/]]},
+		{name: "ebPlatformWidgets", location: "lib/ebPlatformWidgets", trees: [[".", ".", /(\/\.)|(~$)|(CVS)/]]},
+	
+		/*
+		 * webfontloader
+		 */
+		//{name: "webfontloader", location: "lib/other/webfontloader", main: "webfont"}
+		/*
+		 * Da rimuovere
+		 */
+		//{name: "qevent", location: "lib/qevent", trees: [[".", ".", /(\/\.)|(~$)|(CVS)/]]},
+		//{name: "qeventWidgets", location: "../qEventWidgets", trees: [[".", ".", /(\/\.)|(~$)|(CVS)/]]},
+		//{name: "log", location: "lib/other/log", trees: [[".", ".", /(\/\.)|(~$)|(CVS)/]]},
+
+	],
+	paths : {
+		//"rx": "lib/notModules/rxjs/rx",
+		//"rx.binding": "lib/notModules/rxjs/rx.binding",
+		//"rx.time": "lib/notModules/rxjs/rx.time",
+		"underscore": "lib/notModules/underscore",
+		"xregexp": "lib/notModules/xregexp-all-min",
+		//"jquery": "lib/notModules/jquery-1.11.2.min",
+		"jquery-share": "lib/notModules/iatek-jquery-share/jquery.share"
+	},
+	gmaps : {
+		v : '3',
+		key : 'AIzaSyB8S77pCOyJs38Wdd7SbvLyJNxQyKqRflc'
+	/* libraries: 'places,geometry' */},
+	has : {
+		"dom-contains": false, //https://bugs.dojotoolkit.org/ticket/18824
+		ebPlatform: {
+			websocket: false,
+			log: {
+				stackTraces: false//,
+				//"ebPlatform/ebcometd/cometd": "info",
+				/*"ebPlatform/ebcometd": 1,*/
+				/*"ebPlatform/iscrizione": 1,*/
+				/*"ebPlatform/utility": 1,*/
+				/*"ebPlatform/fontLoader": 1,*/
+				/*"ebPlatformWidgets/Form/utility": 1,*/
+				/*"ebPlatformWidgets/Dialogs/EditImageDialogContentWidget": 1,*/
+				/*"ebPlatformWidgets/Evento/EventPage/EventPageWidget": 1,*/
+				/*"ebPlatformWidgets/Evento/EventPage/EventPageTemplateWidget": 1*/
+				/*"ebPlatformWidgets/Form/FontSelectorWidget": 1,*/
+				/*"ebPlatformWidgets/Evento/EventPage/EditPersonalDetailsFormDialogContentWidget": 1*/
+			}
+		}
+	},
+
+	staticHasFeatures: {
+		"highcontrast" : false
+	},
+	
+	// deps: ["built/evento.js.uncompressed"],
+
+	build : {
+		releaseDir : './deploy',
+		layers: {			
+    		"built/dojo":	{
+    			include:	["dojo/dojo",
+    			        	 "dojo/i18n",
+    			        	 "dojo/ready",
+    			        	 "dojo/request",
+    			        	 "dojo/request/script",
+    			        	 "dojo/selector/lite"],
+    			customBase: true
+    		},
+    		"built/common":		{
+    			include:	["3rdparty/external",
+    			        	 "clipboard/clipboard",
+    			        	 "cometd-org/cometd",
+    			        	 "cometd-org/cometd/AckExtension",
+    			        	 "dgrid/_StoreMixin",
+    			        	 "dgrid/editor",
+    			        	 "dgrid/extensions/ColumnHider",
+    			        	 "dgrid/extensions/DijitRegistry",
+    			        	 "dgrid/extensions/DnD",
+    			        	 "dgrid/extensions/Pagination",
+    			        	 "dgrid/Grid",
+    			        	 "dgrid/Keyboard",
+    			        	 "dgrid/List",
+    			        	 "dgrid/OnDemandGrid",
+    			        	 "dgrid/OnDemandList",
+    			        	 "dgrid/Selection",
+    			        	 "dgrid/tree",
+    			        	 "dgrid/util/has-css3",
+    			        	 "dgrid/util/misc",
+    			        	 "dijit/_editor/_Plugin",
+    			        	 "dijit/_editor/html",
+    			        	 "dijit/_editor/plugins/EnterKeyHandling",
+    			        	 "dijit/_editor/plugins/FontChoice",
+    			        	 "dijit/_editor/plugins/ViewSource",
+    			        	 "dijit/_editor/range",
+    			        	 "dijit/_editor/RichText",
+    			        	 "dijit/_MenuBase",
+    			        	 "dijit/_PaletteMixin",
+    			        	 "dijit/_WidgetsInTemplateMixin",
+    			        	 "dijit/Calendar",
+    			        	 "dijit/CalendarLite",
+    			        	 "dijit/DropDownMenu",
+    			        	 "dijit/Editor",
+    			        	 "dijit/form/_AutoCompleterMixin",
+    			        	 "dijit/form/_ComboBoxMenu",
+    			        	 "dijit/form/_ComboBoxMenuMixin",
+    			        	 "dijit/form/_ExpandingTextAreaMixin",
+    			        	 "dijit/form/_FormSelectWidget",
+    			        	 "dijit/form/_RadioButtonMixin",
+    			        	 "dijit/form/_SearchMixin",
+    			        	 "dijit/form/ComboBox",
+    			        	 "dijit/form/ComboBoxMixin",
+    			        	 "dijit/form/ComboButton",
+    			        	 "dijit/form/DataList",
+    			        	 "dijit/form/DateTextBox",
+    			        	 "dijit/form/FilteringSelect",
+    			        	 "dijit/form/HorizontalSlider",
+    			        	 "dijit/form/MultiSelect",
+    			        	 "dijit/form/RadioButton",
+    			        	 "dijit/form/Select",
+    			        	 "dijit/form/SimpleTextarea",
+    			        	 "dijit/form/Textarea",
+    			        	 "dijit/layout/_TabContainerBase",
+    			        	 "dijit/layout/ScrollingTabController",
+    			        	 "dijit/layout/StackContainer",
+    			        	 "dijit/layout/StackController",
+    			        	 "dijit/layout/TabContainer",
+    			        	 "dijit/layout/TabController",
+    			        	 "dijit/Menu",
+    			        	 "dijit/MenuItem",
+    			        	 "dijit/MenuSeparator",
+    			        	 "dijit/ProgressBar",
+    			        	 "dijit/TitlePane",
+    			        	 "dijit/ToolbarSeparator",
+    			        	 "dijit/TooltipDialog",
+    			        	 "dijit/Tree",
+    			        	 "dijit/tree/_dndContainer",
+    			        	 "dijit/tree/_dndSelector",
+    			        	 "dijit/tree/dndSource",
+    			        	 "dijit/tree/ForestStoreModel",
+    			        	 "dijit/tree/ObjectStoreModel",
+    			        	 "dijit/tree/TreeStoreModel",
+    			        	 "dojo/cookie",
+    			        	 "dojo/data/ObjectStore",
+    			        	 "dojo/data/util/sorter",
+    			        	 "dojo/dnd/Avatar",
+    			        	 "dojo/dnd/Container",
+    			        	 "dojo/dnd/Manager",
+    			        	 "dojo/dnd/move",
+    			        	 "dojo/dnd/Selector",
+    			        	 "dojo/dnd/Source",
+    			        	 "dojo/dnd/Target",
+    			        	 "dojo/fx",
+    			        	 "dojo/fx/easing",
+    			        	 "dojo/hash",
+    			        	 "dojo/request/iframe",
+    			        	 "dojo/store/Cache",
+    			        	 "dojo/store/JsonRest",
+    			        	 "dojo/store/Observable",
+    			        	 "dojo/text",
+    			        	 "dojox/charting/action2d/Base",
+    			        	 "dojox/charting/action2d/Highlight",
+    			        	 "dojox/charting/action2d/Magnify",
+    			        	 "dojox/charting/action2d/MoveSlice",
+    			        	 "dojox/charting/action2d/PlotAction",
+    			        	 "dojox/charting/action2d/Tooltip",
+    			        	 "dojox/charting/axis2d/common",
+    			        	 "dojox/charting/Chart",
+    			        	 "dojox/charting/Element",
+    			        	 "dojox/charting/plot2d/_PlotEvents",
+    			        	 "dojox/charting/plot2d/Base",
+    			        	 "dojox/charting/plot2d/common",
+    			        	 "dojox/charting/plot2d/Pie",
+    			        	 "dojox/charting/scaler/common",
+    			        	 "dojox/charting/Series",
+    			        	 "dojox/charting/SimpleTheme",
+    			        	 "dojox/charting/Theme",
+    			        	 "dojox/charting/themes/Claro",
+    			        	 "dojox/charting/themes/common",
+    			        	 "dojox/charting/widget/Legend",
+    			        	 "dojox/charting/widget/SelectableLegend",
+    			        	 "dojox/color",
+    			        	 "dojox/color/_base",
+    			        	 "dojox/color/Palette",
+    			        	 "dojox/cometd",
+    			        	 "dojox/cometd/ack",
+    			        	 "dojox/editor/plugins/EntityPalette",
+    			        	 "dojox/editor/plugins/InsertEntity",
+    			        	 "dojox/editor/plugins/PasteFromWord",
+    			        	 "dojox/editor/plugins/SafePaste",
+    			        	 "dojox/embed/Flash",
+    			        	 "dojox/form/CheckedMultiSelect",
+    			        	 "dojox/form/Uploader",
+    			        	 "dojox/form/uploader/_Base",
+    			        	 "dojox/form/uploader/_Flash",
+    			        	 "dojox/form/uploader/_HTML5",
+    			        	 "dojox/form/uploader/_IFrame",
+    			        	 "dojox/fx/_base",
+    			        	 "dojox/fx/_core",
+    			        	 "dojox/fx/scroll",
+    			        	 "dojox/gfx",
+    			        	 "dojox/gfx/fx",
+    			        	 "dojox/gfx/gradutils",
+    			        	 "dojox/gfx/renderer",
+    			        	 "dojox/gfx/svg",
+    			        	 "dojox/html/ellipsis",
+    			        	 "dojox/html/entities",
+    			        	 "dojox/html/format",
+    			        	 "dojox/lang/functional",
+    			        	 "dojox/lang/functional/array",
+    			        	 "dojox/lang/functional/fold",
+    			        	 "dojox/lang/functional/lambda",
+    			        	 "dojox/lang/functional/object",
+    			        	 "dojox/lang/functional/reversed",
+    			        	 "dojox/lang/functional/scan",
+    			        	 "dojox/lang/utils",
+    			        	 "dojox/timing",
+    			        	 "dojox/timing/_base",
+    			        	 "dojox/widget/ColorPicker",
+    			        	 "xstyle/core/load-css"]
+    		},
+    		"built/ebCommon":	{
+    			include:	["app/_AppMixin",
+    			        	 "app/utility",
+    			        	 "ebPlatform/commonDialogs",
+    			        	 "ebPlatform/i18n",
+    			        	 "ebPlatform/json",
+    			        	 "ebPlatform/logger",
+    			        	 "ebPlatform/stato",
+    			        	 "ebPlatform/utility",
+    			        	 "ebPlatformWidgets/_EbPlatformWidgetMixin",
+    			        	 "ebPlatformWidgets/_StatefulWidgetMixin",
+    			        	 "ebPlatformWidgets/CustomTooltip",
+    			        	 "ebPlatformWidgets/Dialogs/_ParentScrollPreventMixin",
+    			        	 "ebPlatformWidgets/Dialogs/CustomizedI18nDialogMixin",
+    			        	 "ebPlatformWidgets/Dialogs/CustomizedI18nDialogWidget",
+    			        	 "ebPlatformWidgets/Dialogs/CustomizedI18nDialogSimpleWidget",
+    			        	 "ebPlatformWidgets/Dialogs/DialogWithCloseButtonWidget",
+    			        	 "ebPlatformWidgets/Dialogs/InfoWithCheckBoxDialogWidget",
+    			        	 "ebPlatformWidgets/EbPlatformWidgetHelper",
+    			        	 "ebPlatformWidgets/Evento/EventDetails/TimeSlotWidget",
+    			        	 "ebPlatformWidgets/Form/RichTextBoxWidget",
+    			        	 "ebPlatformWidgets/Form/utility",
+    			        	 "ebPlatformWidgets/Form/TimeZoneAwareDateTextBox",
+    			        	 "ebPlatformWidgets/ProfileNavWidget",
+    			        	 "ebPlatformWidgets/Toolbar/ButtonsStripToolbarWidget"],
+    			exclude:	["built/dojo",
+    			        	 "built/common",
+    			        	 "ebPlatform/fontLoader"]
+    		},
+    		"built/fontLoader": {
+    			include:	["ebPlatform/fontLoader"],
+    			exclude:	["dojo/text",
+    			        	 "built/dojo",
+    			        	 "built/common",
+    			        	 "built/ebCommon"]
+    		}, 
+    		"built/eventi": {
+    			include:	["ebPlatformWidgets/ListaEventi/DuplicaEventoDialogWidget",
+    				         "ebPlatformWidgets/ListaEventi/ArchiviaEventoDialogWidget"],
+    			exclude:	["built/dojo",
+    			        	 "built/common",
+    			        	 "built/ebCommon",
+    			        	 "built/fontLoader"]
+    		},    		    		
+    		"built/evento": {
+    			include: 	["app/evento",
+    			         	 "ebPlatformWidgets/integration/pardot/MapFieldDialogWidget"],
+    			exclude:	["built/dojo",
+    			        	 "built/common",
+    			        	 "built/ebCommon",
+    			        	 "built/fontLoader"]
+    		},
+    		"built/settings": {
+    			include: 	["app/settings",    				         
+    				         "ebPlatform/stato"],
+    			exclude:	["built/dojo",
+    			        	 "built/common",
+    			        	 "built/ebCommon",
+    			        	 "built/fontLoader"]
+    		},
+    		"built/box_anagrafica": {
+    			include:	[],
+    			exclude:	["built/dojo",
+    			        	 "built/common",
+    			        	 "built/ebCommon",
+    			        	 "built/fontLoader"]
+    		},
+    		"built/footerInc": {
+    			include:	["dojo/request",
+    			        	 "ebPlatformWidgets/Dialogs/ConfirmDialogWidget",         
+    			             "ebPlatformWidgets/Dialogs/LoadingDialogWithMsgWidget",         
+    			             "ebPlatformWidgets/Dialogs/RollBackRetryDialogWidget",
+    			             "ebPlatformWidgets/Dialogs/DialogSimpleWithCloseButton",
+    			             "ebPlatformWidgets/Dialogs/PreviewDialogWidget",
+    			             "ebPlatformWidgets/Dialogs/WelcomeWizardDialogWidget"
+    			             ],
+    			exclude:	["built/dojo",
+    			        	 "built/common",
+    			        	 "built/ebCommon",
+    			        	 "built/fontLoader"]
+    		},
+    		"built/iscrizionefull": {
+    			include:	["dojo/text",
+    			        	 "dojo/json",
+    			        	 "dojo/fx",
+    			        	 "ebPlatform/box_anagrafica",
+    			        	 "ebPlatformWidgets/Dialogs/CustomizedI18nDialogWidget",
+    				         "ebPlatformWidgets/Dialogs/CustomizedI18nDialogSimpleWidget",
+    				         "ebPlatformWidgets/Dialogs/ConfirmDialogWidget",
+    				         "ebPlatformWidgets/Dialogs/DialogSimpleWithCloseButton",
+    				         "ebPlatformWidgets/Form/TimeZoneAwareDateTextBox"],
+				exclude:	["built/dojo"]
+    		},
+    		"built/logiche": {
+    			include:	["dijit/registry",
+    			        	 "ebPlatform/RegistrationPageController",
+    			        	 "ebPlatform/RegistrationPageElement"]
+    		},
+    		"built/admin": {
+    			include:	["dojo/i18n",
+    			        	 "dojo/debounce",
+    			        	 "dojo/store/JsonRest",
+    			       		 
+    			       		 "dijit/form/Button",
+    				         "dijit/form/CheckBox",
+    				         "dijit/form/DateTextBox",
+    				         "dijit/form/Form",
+    				         "dijit/form/NumberTextBox",
+    				         "dijit/form/Select",
+    				         "dijit/form/TextBox",
+    				         "dijit/form/ValidationTextBox",
+    				         
+    				         "dgrid/editor",
+    				         "dgrid/Grid",
+    				         "dgrid/extensions/ColumnHider",
+    				         "dgrid/extensions/Pagination",
+    				         
+    				         "put-selector/put",
+    				         
+    				         "xstyle/core/load-css",
+    				         
+    				         "ebPlatform/commonDialogs",
+    				         "ebPlatformWidgets/Dialogs/WelcomeWizardDialogContentWidget",
+    				         "ebPlatformWidgets/Dialogs/WelcomeWizardDialogWidget",
+    				         "ebPlatformWidgets/Dialogs/nls/WelcomeWizardDialogWidget",
+    				         "ebPlatformWidgets/Dialogs/nls/it/WelcomeWizardDialogWidget"
+    			       		 ],
+    			exclude:	["built/dojo"]
+    		},
+    		"built/pardot": {
+    			include:	["ebPlatformWidgets/integration/pardot/ImportProspectsWidget"],
+    			exclude:	["built/dojo",
+    			        	 "built/common",
+    			        	 "built/ebCommon",
+    			        	 "built/fontLoader"]
+    		}
+    	},
+    	stripConsole: "none",
+    	cssOptimize: "comments",
+    	layerOptimize: "closure",
+    	// Excludes tests, demos, and original template files from being included in the built version. 
+    	mini: true
+	}
+/* ,cacheBust: true */
+};
