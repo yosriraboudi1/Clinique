@@ -1,13 +1,23 @@
 <?php
-require "html/connection.php";
+require "..\..\connection.php";
+require "..\..\Controller\AnnonceC.php";
 $db = connect_db();
-$req = "SELECT a.id ,a.nom_inf,a.prenom_inf,a.numtel_inf,a.heure_deb,a.heure_fin FROM annonce as a , reservation as r where (a.id != r.id_ann ); " ;
+$req = "SELECT * FROM `annonce`" ;
 
 try{
     $res=$db->query($req);
 }catch (PDOExeception $e){
     die($e->getMessage());
 }
+
+/*if (isset($_POST['search'])) {
+  $searchName = $_POST['searchName'];
+  $liste = $eventC->listEvent();
+  $liste = $eventC->searchEventByName($liste, $searchName);
+} else {
+  $liste = $eventC->listEvent();
+}*/
+
 
 ?>
 <!DOCTYPE html>
@@ -98,9 +108,50 @@ try{
     </div>
 </section>
 <br><br><br><br><br><br><br><br>
+
+<h1>Recherche d'utilisateur</h1>
+    <form method="post">
+        <label for="username">Nom d'utilisateur :</label>
+        <input type="text" id="username" name="nom" required>
+        <button type="submit">Rechercher</button>
+    </form>
+    <?php
+    // Traitement du formulaire de recherche
+try {
+  $conn = new PDO("mysql:host=localhost;dbname=clinique", 'root', '');
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+   } catch(PDOException $e) {
+  echo "Erreur de connexion à la base de données: " . $e->getMessage();
+   }
+      if (isset($_POST['nom'])) {
+          $nom = $_POST['nom'];
+  $users = searchUsersByName($conn, $nom);
+          if (count($users) > 0) {
+              echo '<h2>Résultats de la recherche :</h2>';
+              echo '<ul>';
+              foreach ($users as $user) {
+                  echo '<li>' . $user['id'] . ' ' . $user['nom_inf'] . ' ' . $user['prenom_inf']. ' ' . $user['heure_deb']. ' ' . $user['heure_fin']. '</li>';
+              }
+              echo '</ul>';
+          } else {
+              echo '<p>Aucun utilisateur trouvé.</p>';
+          }
+      }
+  
+  function searchUsersByName($conn, $nom) {
+          $stmt = $conn->prepare("SELECT * FROM annonce WHERE nom_inf LIKE :nom or prenom_inf LIKE :nom");
+          $stmt->bindValue(':nom', '%'.$nom.'%');
+          $stmt->execute();
+          return $stmt->fetchAll(PDO::FETCH_ASSOC);
+      }
+   // Fermeture de la connexion à la base de données
+      $conn = null;
+    ?>
+    <br><br><br>
   <section id="annonce">
   <div class="container">
       <div class="row">
+ 
  <?php while ($annonce = $res->fetch()){
     $nom = $annonce["nom_inf"];
     $prenom = $annonce["prenom_inf"];
@@ -109,11 +160,15 @@ try{
     $hfin = $annonce["heure_fin"];
     $id = $annonce["id"];
 ?>
+                
                 <div class="card col-4">
+                
                     <img class="card-img-top" src="images/card_img.jpg" alt="Card image cap">
                     <div class="card-body">
                       <h5 class="card-title">
                         <?php echo $nom." ".$prenom ;
+
+
                         ?> 
                       </h5>
                       <p class="card-text">

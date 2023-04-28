@@ -1,6 +1,6 @@
  <?php
-require "connection.php";
-require "..\Models\AnnonceModel.php";
+require "..\..\connection.php";
+require "..\..\Controller\AnnonceC.php";
 $nom =$_POST["nom"];
 $prenom = $_POST["prenom"];
 $ntel = $_POST["ntel"];

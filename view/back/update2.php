@@ -1,6 +1,6 @@
 <?php
-require "connection.php";
-require "..\Models\AnnonceModel.php";
+require "..\..\connection.php";
+require "..\..\Controller\AnnonceC.php";
 
 $id_modif=(int)$_GET["id"];
 $nom_modif = $_GET["nom"];

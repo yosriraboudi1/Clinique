@@ -1,6 +1,6 @@
 <?php
-require "connection.php";
-require "..\Models\AnnonceModel.php";
+require "..\..\connection.php";
+require "..\..\Controller\AnnonceC.php";
 
 $id_supp=(int)$_GET["id"];
 $res = Annonce::Delete($id_supp);

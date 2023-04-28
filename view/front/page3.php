@@ -24,8 +24,9 @@
             </div>
             <div class="rounded-3 fsb ">
                 <fieldset name="form-field">
-                    <form action="ajout_res.php"  method="POST" style="margin : -150px 0px 0px 550px ;">
+                    <form action="..\back\ajout_res.php"  method="POST" style="margin : -150px 0px 0px 550px ;">
                         <label for="cin" style="font-weight : bold ;">Cin :</label><br>
+                        
                             <input type="text" name="cin"  id="cin" placeholder="Entrer votre CIN "style="border : 0px ; border-radius: 9px ; width : 320px ; height : 34px ; " pattern="^\d{8}$" title="le numero de cin doit etre numerique et contient obligatoirement 8 chiffre"><br><br>
                         
                         <label for="tel" style="font-weight : bold ;">Telephone :</label><br>
