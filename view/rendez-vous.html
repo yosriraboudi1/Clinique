@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>rendez-vous</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+		}
+		.container {
+			margin: 0 auto;
+			padding: 50px;
+			background-color: #FFFFFF;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			max-width: 600px;
+		}
+		input[type="text"], input[type="password"], input[type="email"], input[type="number"] {
+			width: 100%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			box-sizing: border-box;
+			border: none;
+			border-radius: 4px;
+			background-color: #F2F2F2;
+		}
+		button {
+			background-color: #4CAF50;
+			color: white;
+			padding: 12px 20px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			width: 100%;
+		}
+		button:hover {
+			background-color: #45a049;
+		}
+		.form-footer {
+			margin-top: 10px;
+			font-size: 14px;
+			text-align: center;
+		}
+		.form-footer a {
+			color: #4CAF50;
+			text-decoration: none;
+		}
+		.error-message {
+			color: red;
+			font-size: 12px;
+			margin-top: 5px;
+		}
+		{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	  }
+	  
+	  label {
+		margin-top: 10px;
+		font-weight: bold;
+	  }
+	  
+	  input, textarea {
+		margin-bottom: 20px;
+		padding: 10px;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		font-size: 16px;
+	  }
+	  
+	  input[type="submit"] {
+		background-color: #4CAF50;
+		color: white;
+		border: none;
+		border-radius: 5px;
+		padding: 10px 20px;
+		font-size: 16px;
+		cursor: pointer;
+	  }
+	  
+	  input[type="submit"]:hover {
+		background-color: #3e8e41;
+	  }
+	}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h2>prendre un rendez-vous</h2>
+		<form action="admin.php" method="post">
+			<label for="cin">CIN</label>
+			<input type="text" id="cin" name="cin" placeholder="CIN">
+
+			<label for="nom">Nom</label>
+			<input type="text" id="nom" name="nom" placeholder="Nom">
+
+			<label for="prenom">Prénom</label>
+			<input type="text" id="prenom" name="prenom" placeholder="Prénom">
+
+			<label for="email">Adresse email</label>
+			<input type="email" id="email" name="email" placeholder="Adresse email">
+
+			<label for="tel">Téléphone</label>
+			<input type="text" id="tel" name="tel" placeholder="Téléphone">
+
+            <label for="date">date</label>
+			<input type="date" id="date" name="date" placeholder="date">
+
+			<label for="heure">Heure :</label>
+			<input type="time" id="heure" name="heure" required><br>
+		  
+			<label for="message">Message :</label>
+			<textarea id="message" name="message"></textarea><br>
+		  
+			<input type="submit" value="Envoyer">
+
+			<button type="submit"  id="mybtn">confirmer</button>
+            <input type="reset" value="reset">
+			<form>
+			<button id="annuler">Annuler la réservation</button>
+
+			<button id="modifier">Modifier la réservation</button>
+		</form>
+		</div>
+			
+           
+    </form>
+	
+
+
+
+<script>
+   
+   /* const bouton=document.getElementById("mybtn");
+     bouton.addEventListener("click",passValidation)
+     function passValidation()
+     {
+        const password1 = document.getElementById("password").value;
+  const password2 = document.getElementById("confirm_password").value;
+
+  // Vérifier si les deux mots de passe sont identiques
+  if (password1 === password2 && password1.length!=0 && password2.length!=0) {
+    // Les mots de passe sont identiques, renvoyer true
+    alert("identiques");
+     
+   
+  } else {
+    // Les mots de passe ne sont pas identiques, renvoyer false
+   alert("ne sont pas identiques");
+   
+    
+  }
+     }
+     */
+     document.querySelector("form").addEventListener("submit",function(e)
+     
+     {
+        e.preventDefault();
+       var sh='azertyuiopqsdfghjklmwxcvbn';
+       var kh='AZERTYUIOPQSDFGHJKLMWXCVBN';
+       var bh='AZERTYUIOPQSDFGHJKLMWXCVBNazertyuiopqsdfghjklmwxcvbn';
+       var dh='AZERTYUIOPQSDFGHJKLMWXCVBNazertyuiopqsdfghjklmwxcvbn0123456789';
+       var mh='0123456789';
+var i;
+var error1,error2,error3,error4,error5;
+var correct1,correct2,correct3,correct4,correct5;
+        const id = document.getElementById('cin').value;
+        const firstName = document.getElementById('nom').value;
+        const lastName = document.getElementById('prenom').value;
+        const email = document.getElementById('email').value;
+        const phoneNumber = document.getElementById('tel').value;
+        const date = document.getElementById('date').value;
+        
+      
+        for(i=0;i<id.length;i++)
+        {  
+            if ( id.length==0  || isNaN(id)|| id.length!=8|| mh.indexOf(id.charAt(i))==-1)
+             {
+                alert("id invalid");return false;
+
+    }
+        for(i=0;i<firstName.length;i++)
+        {  
+            if ( firstName.length==0 || firstName.length<3 || bh.indexOf(firstName.charAt(i))==-1)
+             {
+                alert("nom invalide");return false;
+
+    }  }
+
+
+        for(i=0;i<lastName.length;i++)
+        {  if (lastName.length<4 ||  bh.indexOf(lastName.charAt(i))==-1) 
+            {
+   
+                alert("prenom invalide");return false;
+  
+}}
+
+ //ali@yahoo.fr
+/*l=email.length;//12
+p1=email.indexOf('@'); //3 
+p2=email.indexOf('.'); //9  
+c=email.charAt(0); 
+ch1=email.substr(0,p1); l1=ch1.length;  //0,3
+ch2=email.substr(p1+1,p2-p1-1); l2=ch2.length;//4,5 
+ch3=email.substr(p2+1,l-p2-1); l3=ch3.length; //10,2
+for(i=1;i<l1;i++) 
+ {if(bh.indexOf(ch1.charAt(i))==-1)
+{alert("email invalide ");return false;}}
+for(i=0;i<l2;i++) 
+ {if(dh.indexOf(ch2.charAt(i))==-1)
+{alert("email invalide");return false;}  
+s=0;}
+for(i=0;i<l2;i++) 
+{ if(mh.indexOf(ch2.charAt(i))!=-1)
+{s++;} }
+for(i=0;i<l3;i++) 
+ {if(bh.indexOf(ch3.charAt(i))==-1)
+{alert("email invalide");return false;}}
+if(l1==0||l2<4||l2>6||(l3!=2&&l3!=3)||p1==-1||p2==-1||c<'A'||c>'Z'||s<2) 
+{alert("email invalide");return false;}
+ */
+for(i=0;i<phoneNumber.length;i++)
+
+
+ {  if ( phoneNumber.length<0 || isNaN(phoneNumber) || mh.indexOf(phoneNumber.charAt(i))==-1) {
+
+    alert("phone invalide");return false;
+}}
+ 
+  var s=0;
+  var k=0;
+  var m=0;
+  const l=password1.length;
+  
+
+     );
+    
+    
+        
+     
+</script>
+
+    
+</body>
+</html>
