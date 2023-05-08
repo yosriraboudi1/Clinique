@@ -2,7 +2,9 @@
 require "..\..\connection.php";
 require "..\..\Controller\AnnonceC.php";
 $db = connect_db();
-$req = "SELECT * FROM `annonce`" ;
+
+$username=$_POST["username"];
+$req = "SELECT * FROM `annonce` where nom_inf='$username'";
 
 try{
     $res=$db->query($req);
@@ -110,19 +112,21 @@ try{
 </section>
 <br><br><br><br><br><br><br><br>
 
-<h1>Recherche d'utilisateur</h1>
+ <h1>Recherche d'utilisateur</h1>
     <form method="post" action="page_annonce_avec_rech.php">
         <label for="username">Nom d'utilisateur :</label>
         <input type="text" id="username" name="username" required>
         <button type="submit">Rechercher</button>
-    </form>
+    </form> 
   
     <br><br><br>
   <section id="annonce">
   <div class="container">
       <div class="row">
  
- <?php while ($annonce = $res->fetch()){
+ <?php 
+ 
+ while ($annonce = $res->fetch()){
     $nom = $annonce["nom_inf"];
     $prenom = $annonce["prenom_inf"];
     $numtel = $annonce["numtel_inf"];
@@ -155,6 +159,7 @@ try{
                   </div>
                   <?php
                     }
+                
                     ?> 
 
                 </div>
