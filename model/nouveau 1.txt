@@ -1,0 +1,147 @@
+<?php
+include_once '../Model/rdv.php';
+include_once '../Controller/rdvC.php';
+
+$error = "";
+
+// create deplacement
+$rdv = null;
+
+// create an instance of the controller
+$rdvC = new rdvC();
+
+if (
+  isset($_POST["cin"]) &&
+  isset($_POST["nom"]) &&
+  isset($_POST["prenom"]) &&
+  isset($_POST["email"]) &&
+  isset($_POST["tel"]) &&
+  isset($_POST["date"]) &&
+  isset($_POST["heure"])
+) {
+  if (
+    !empty($_POST["cin"]) &&
+    !empty($_POST["nom"]) &&
+    !empty($_POST["prenom"]) &&
+    !empty($_POST["email"]) &&
+    !empty($_POST["tel"]) &&
+    !empty($_POST["date"]) &&
+    !empty($_POST["heure"])
+  ) {
+    $rdv = new rdv(
+      $_POST['cin'],
+      $_POST['nom'],
+      $_POST['prenom'],
+      $_POST['email'],
+      $_POST['tel'],
+      $_POST['date'],
+      $_POST['heure'],
+    );
+    $rdvC->ajouterrdv($rdv);
+
+    exit();
+  } else {
+    $error = "Missing information";
+  }
+}
+
+?>
+<!DOCTYPE html>
+<html>
+
+
+<body>
+  
+    
+
+
+          <form action="addR.php" method="post" onsubmit="return verif()">
+
+            <label for="cin" style="font-weight : bold ;">Cin :</label><br>
+            <input type="number" id="cin" placeholder="Entrer votre CIN "
+              style="border : 0px ; border-radius: 9px ; width : 320px ; height : 34px ; "><br><br>
+
+
+            <label for="nom" style="font-weight : bold ;">Nom</label><br>
+            <input type="text" id="nom" placeholder="Entrer votre Nom "
+              style="border : 0px ; border-radius: 9px ; width : 320px ; height : 34px ; "><br><br>
+
+            <label for="prenom" style="font-weight : bold ;">Prenom</label><br>
+            <input type="text" id="prenom" placeholder="Entrer votre Prenom "
+              style="border : 0px ; border-radius: 9px ; width : 320px ; height : 34px ; "><br><br>
+
+            <label for="tel" style="font-weight : bold ;">Telephone :</label><br>
+            <input type="number" id="tel" placeholder="Entrer votre telephone "
+              style="border : 0px ; border-radius: 9px ; width : 320px ; height : 34px ; "><br><br>
+
+            <label for="add" style="font-weight : bold ;">Adresse :</label><br>
+            <input type="text" id="add" placeholder="Entrer votre adresse "
+              style="border : 0px ; border-radius: 9px ; width : 320px ; height : 34px ; "><br><br>
+            <label for="date">date</label>
+            <input type="text" id="date" name="date" placeholder="date">
+
+
+
+            <label for="heure">heure</label>
+            <input type="text" id="heure" name="heure" placeholder="heure">
+
+
+
+            <br>
+            <button class="submit" id="mybtn"
+              style="border : 0px ; margin-left : 80px ; color : white ; background-color: #136989; border-radius: 8px ; width:120px ; height : 32px ">Reserver</button>
+          </form>
+  <script>
+    function verif() {
+
+      cin = document.getElementById("cin").value;
+      if ((cin.length != 8) || (isNaN(cin))) {
+        alert("le numero de cin doit etre numerique et contient obligatoirement 8 chiffre !!");
+        return false;
+      }
+
+      var ch2 = document.getElementById("nom").value;
+      for (i = 0; i < ch2.length; i++) {
+        if ((ch2.charAt(i).toUpperCase() < 'A') || (ch2.charAt(i).toUpperCase() > 'Z')) {
+          alert("Le nom doit etre alphabetique seulement!!");
+          return false;
+        }
+      }
+      var ch1 = document.getElementById("prenom").value;
+      for (i = 0; i < ch1.length; i++) {
+        if ((ch1.charAt(i).toUpperCase() < 'A') || (ch1.charAt(i).toUpperCase() > 'Z')) {
+          alert("le prenom doit etre alphabetique seulement !!");
+          return false;
+        }
+      }
+
+      num = document.getElementById("tel").value;
+      if ((num.length != 8) || (isNaN(num))) {
+        alert("le numero de telehpone doit etre numerique et contient obligatoirement 8 chiffre !!");
+        return false;
+      }
+
+
+      date = document.getElementById("date").value;
+      if (date.charAt(2) != '/' && date.charAt(5) != '/') {
+        alert("la date doit etre de cette format 00/00/00");
+        return false;
+      }
+
+
+
+      heure = document.getElementById("heure").value;
+      if (heure.charAt(2) != ':') {
+        alert("l'heure doit etre de cette format 00:00");
+        return false;
+      }
+
+
+    }
+  </script>
+
+
+
+</body>
+
+</html>

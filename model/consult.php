@@ -5,7 +5,7 @@
 		private string $nom_docteur;
 		private string $nom_patient;
 		private string $pr_patient;
-		private int  $tel;
+		private string  $tel;
         private string  $motif;
         private string  $traitements;
 		

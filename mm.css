@@ -1,0 +1,82 @@
+*{
+    font-family: lato;
+}
+.fsb{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.pr6{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.pr1{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.pr2{
+    margin-top: 10%;
+    margin-left: 30%;
+    border-radius: 50%;
+}
+.pr3{
+    border: white 2px solid;
+    border-radius: 10%;
+    margin-bottom: 10px;
+}
+.pr4{
+    margin-left: 5%;
+}
+
+.yacinecolor{
+    background-color: #C9ECFF;
+}
+.smok{
+    background-color: whitesmoke;
+}
+.myClass{
+    color: #C41B79;
+    text-shadow: 1px 1px 0px #090909;
+  }
+  .cc{
+    background-color: #C9ECFF;
+  }
+  ul {
+    list-style-type: none;
+  }
+  .vl {
+    border-left: 6px solid green;
+    height: 500px;
+    border-radius: 5px;
+  }
+  .ff{
+    color: #C41B79;
+  }
+  a{
+    color: #0a0a0a;
+    text-decoration: none;
+  }
+  .icon {
+    font-size: 1.5rem; /* changer la taille de la police pour augmenter la taille de l'icône */
+  }
+  .icon2 {
+    font-size: 1.8rem;
+    margin-right: 10px;
+    margin-top: 7px; /* changer la taille de la police pour augmenter la taille de l'icône */
+
+  }
+  
+
+  .rdv-form{
+    margin-right: 500px;
+    margin-left: 300px;
+
+  }
+
+  
+  
+  
+  

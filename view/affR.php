@@ -93,8 +93,12 @@
 				?>
 				
 				<html>
+				
+			
+					</style>
 					<head></head>
 					<body>
+
 						<button><a href="addR.php">Ajouter un rendez-vous</a></button>
 						<form method="post">
 	<label for="username">Nom d'utilisateur :</label>
@@ -135,6 +139,7 @@ function searchUsersByName($conn, $nom) {
 
 
 ?>
+
 						<center><h1>Liste des rendez-vous</h1></center>
 						<table border="1" align="center">
 							<tr>
@@ -178,17 +183,7 @@ function searchUsersByName($conn, $nom) {
 </div>
 
         </div>
-        <!-- <div class="col-3 bg-info rounded-3 pr3">
-            <div class="pt-1">
-                <div class="pr3">
-                    <img src="images/245701894_1507903596232382_6113419623064047752_n.jpg" width="100px"
-                        height="auto" class="pr2" alt="">
-                    <p class="text-center">hazem tebibi</p>
-                    <p class="text-center">20 ans</p>
-                </div>
-            </div>
-            <img src="images/calender.png" width="100%" class="rounded-3" alt="">
-        </div> -->
+  
 
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
