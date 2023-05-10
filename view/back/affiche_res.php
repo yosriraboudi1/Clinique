@@ -22,6 +22,8 @@ $ListeDesReservations = $reservations->getAll();
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.6/jspdf.plugin.autotable.js"></script>
 </head>
 
 <body>
@@ -31,9 +33,13 @@ $ListeDesReservations = $reservations->getAll();
                     <li>
                         <img src="../front/images/logo.png" id="img">
                         </li>
-                        <br>
-                        <br>
+                        <li>
+                                <a href="affR.php"><i class="bi bi-file-earmark"></i>&nbsp;Listes des <br> rendez-vous</a>
+                            </li>
                             <li>
+                                <a href="affC.php"><i class="bi bi-file-earmark"></i></i>&nbsp;Listes des <br> consultations</a>
+                            </li>
+							<li>
                                 <a href="affiche_res.php"><i class="bi bi-person-circle"></i>&nbsp;Liste des <br>reservations </a>
                             </li>
                             <li>
@@ -43,7 +49,7 @@ $ListeDesReservations = $reservations->getAll();
                                 <a href="ajout_annonces.html"><i class="bi bi-plus-lg"></i>&nbsp;Ajouter <br>une annonce </a>
                             </li>
                             <li>
-                                <a href="statistique.php"><i class="bi bi-plus-lg"></i>&nbsp;Statistique</a>
+                                <a href="statistique.php"><i class="bi bi-percent"></i>&nbsp;Statistique</a>
                             </li>
                             
 
@@ -54,14 +60,17 @@ $ListeDesReservations = $reservations->getAll();
         </div>
     </div>
 </header>
+
     <section>
                     <i class="bi bi-bell icon2"></i>
                     <select name="pets" >
                         <option value="today">Aujourd'hui</option>
-                    </select>
+                        
+                    </select><br><br>
+                    <button id="download-button" onclick="convertToPDF()" class="btn btn-info" >Download as PDF</button>
     </section>
-<br><br>
-                    <table>
+</br></br>
+                    <table id="yosri">
                         <thead>
                             <th>CIN</th>
                             <th>Num telephone</th>
@@ -95,10 +104,28 @@ $ListeDesReservations = $reservations->getAll();
                         ?>
 
                       </table>
-    
-    
-
-
+                      
     </body>
+    
+    
+    <script>
+                      function convertToPDF() {
+    var doc = new jsPDF();
+  doc.setFontSize(14);
+  var currentDate = new Date();
+  var formattedDate = currentDate.getDate() + "-" + (currentDate.getMonth() + 1) + "-" + currentDate.getFullYear();
+  doc.text("Liste des annonce :                                                                "+ formattedDate, 20, 20);
+
+  doc.autoTable({
+    html: '#yosri',
+    startY: 40, 
+    styles: {
+      cellPadding: 1,
+      fontSize: 12,
+    }
+  });
+  doc.save("annonce.pdf");
+  }
+                    </script>
     
 </html>

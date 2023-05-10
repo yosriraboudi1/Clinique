@@ -23,20 +23,26 @@
             <nav class="sidebar">
                 <ul>
                     <li>
-                        <img src="../images/logo.png" id="img">
+                        <img src="../front/images/logo.png" id="img">
                         </li>
-                        <br>
-                        <br>
-                            <br>
-                            <li>
-                                <a href="affiche_res.php"><i class="bi bi-person-circle"></i>&nbsp;Liste des <br>reservations </a>
-                            </li>
-                            <li>
-                                <a href="affiche_annonce.php"><i class="bi bi-person-circle"></i>&nbsp;Liste des <br>annonces </a>
-                            </li>
-                            <li>
-                                <a href="ajout_annonces.html"><i class="bi bi-plus-lg"></i>&nbsp;Ajouter <br>une annonce </a>
-                            </li>
+                        <li>
+                            <a href="affR.php"><i class="bi bi-file-earmark"></i>&nbsp;Listes des <br> rendez-vous</a>
+                        </li>
+                        <li>
+                            <a href="affC.php"><i class="bi bi-file-earmark"></i></i>&nbsp;Listes des <br> consultations</a>
+                        </li>
+                        <li>
+                            <a href="affiche_res.php"><i class="bi bi-person-circle"></i>&nbsp;Liste des <br>reservations </a>
+                        </li>
+                        <li>
+                            <a href="affiche_annonce.php"><i class="bi bi-person-circle"></i>&nbsp;Liste des <br>annonces </a>
+                        </li>
+                        <li>
+                            <a href="ajout_annonces.html"><i class="bi bi-plus-lg"></i>&nbsp;Ajouter <br>une annonce </a>
+                        </li>
+                        <li>
+                            <a href="statistique.php"><i class="bi bi-percent"></i>&nbsp;Statistique</a>
+                        </li>
                             
                         </ul>
                     </nav>
@@ -52,57 +58,72 @@
                     </select>
                     <br><br>
                     <div class="form" >
-                        <form  action ="ajout_annonce.php" method="POST" >
+                        <form  action ="ajout_annonce.php" method="POST" onsubmit="return verif()">
                             
                             <label for="nom" style="font-weight : bold ;">Nom : </label><br>
-                            <input type="text" name="nom" id="nom" placeholder="Entrer votre Nom" style="width : 250px ; height:34px ; border: 0px ; border-radius : 8px " pattern="^[a-zA-Z\s]*$" title="le nom doit etre alphabetique seulement"><br><br>
+                            <div><input type="text" name="nom" id="nom" placeholder="Entrer votre Nom" required style="width : 250px ; height:34px ; border: 0px ; border-radius : 8px " ><span id="nomalert" color="red"></span></div><br>
                             <label for="prenom" style="font-weight : bold ;">Prenom : </label><br>
-                            <input type="text" name="prenom" id="prenom" placeholder="Entrer votre Prenom" style="width : 250px ; height:34px ; border: 0px ; border-radius : 8px " pattern="^[a-zA-Z\s]*$" title="le prenom doit etre alphabetique seulement"><br><br>
+                            <input type="text" name="prenom" id="prenom" placeholder="Entrer votre Prenom" required style="width : 250px ; height:34px ; border: 0px ; border-radius : 8px "><span id="prenomalert" color="red"></span><br><br>
                             <label for="ntel" style="font-weight : bold ;">Numero de telephone : </label><br>
-                            <input type="text" name="ntel" id="ntel" placeholder="Entrer votre Numero" style="width : 250px ; height:34px ; border: 0px ; border-radius : 8px " pattern="^\d{8}$" title="le numero de telehpone doit etre numerique et contient obligatoirement 8 chiffre"><br><br>
+                            <input type="text" name="ntel" id="ntel" placeholder="Entrer votre Numero" required style="width : 250px ; height:34px ; border: 0px ; border-radius : 8px " ><span id="ntelalert" color="red"></span><br><br>
                             <label for="hdeb" style="font-weight : bold ;">Heure de debut : </label><br>
-                            <input type="text" name="hdeb" id="hdeb" placeholder="Entrer l'heure de debut :" style="width : 250px ; height:34px ; border: 0px ; border-radius : 8px " pattern="^([01]\d|2[0-3]):([0-5]\d)$" title="L'heure doit être au format HH:MM"><br><br>
+                            <input type="text" name="hdeb" id="hdeb" placeholder="Entrer l'heure de debut :" required style="width : 250px ; height:34px ; border: 0px ; border-radius : 8px "><span id="hdebalert" color="red"></span><br><br>
                             <label for="hfin" style="font-weight : bold ;">Heure de fin  : </label><br>
-                            <input type="text" name="hfin" id="hfin" placeholder="Entrer l'heure de fin :" style="width : 250px ; height:34px ; border: 0px ; border-radius : 8px " pattern="^([01]\d|2[0-3]):([0-5]\d)$" title="L'heure doit être au format HH:MM"><br><br><br>
+                            <input type="text" name="hfin" id="hfin" placeholder="Entrer l'heure de fin :" required style="width : 250px ; height:34px ; border: 0px ; border-radius : 8px "><span id="hfinalert" color="red"></span><br><br><br>
                             <input type="submit" value="Ajouter" style="margin-left :50px; background-color : #1B96C4; width : 140px ; color : white ;height:32px ; border : 0px ; border-radius : 5px ; "></a>
                         </form>
                     </div>
 
     </section>
-   <!-- onsubmit="return verif()" 
+    
     <script>
         function verif(){
             
             var ch2 = document.getElementById("nom").value ;
             for (i = 0; i < ch2.length; i++) {
             if ((ch2.charAt(i).toUpperCase() < 'A') || (ch2.charAt(i).toUpperCase() > 'Z')) {
-            alert("Le nom doit etre alphabetique seulement!!");
+                document.getElementById("nomalert").innerHTML = "<span style='color:red'> Le nom doit etre alphabetique </span>";
             return false;
         }
+        else {
+            document.getElementById("nomalert").innerHTML = "<span style='color:green'> Correct</span>";
+         }
     }   
             var ch1 = document.getElementById("prenom").value ;
                 for (i = 0; i < ch1.length; i++) {
                 if ((ch1.charAt(i).toUpperCase() < 'A') || (ch1.charAt(i).toUpperCase() > 'Z')) {
-                alert("le prenom doit etre alphabetique seulement !!");
-            return false;
+                    document.getElementById("prenomalert").innerHTML = "<span style='color:red'> Le prenom doit etre alphabetique </span>";
+                    return false;
          }
-        }
+         else {
+            document.getElementById("prenomalert").innerHTML = "<span style='color:green'> Correct</span>";
+         }
+                    }
             num = document.getElementById("ntel").value ;
            if ((num.length!= 8) || (isNaN(num))){
-                alert("le numero de telehpone doit etre numerique et contient obligatoirement 8 chiffre !!");
+            document.getElementById("ntelalert").innerHTML = "<span style='color:red'> Le num tel doit contient exactement 8 chiffres </span>";
                 return false ;
             }
+            else {
+            document.getElementById("ntelalert").innerHTML = "<span style='color:green'> Correct</span>";
+         }
 
             hdeb = document.getElementById("hdeb").value ;
             if (hdeb.charAt(2)!= ':'){
-                alert("l'heure de debut doit etre de cette format 00:00 ");
+                document.getElementById("hdebalert").innerHTML = "<span style='color:red'> L'heure de debut doit etre de la format HH:MM</span>";
                 return false ;
             }
+            else {
+            document.getElementById("hdebalert").innerHTML = "<span style='color:green'> Correct</span>";
+         }
             hfin = document.getElementById("hfin").value ;
             if (hfin.charAt(2)!=':'){
-                alert("l'heure de fin doit etre de cette format 00:00");
+                document.getElementById("hfinalert").innerHTML = "<span style='color:red'> L'heure de fin doit etre de la format HH:MM </span>";
                 return false ;
             }
+            else {
+            document.getElementById("hfinalert").innerHTML = "<span style='color:green'> Correct</span>";
+         }
 
 
         }

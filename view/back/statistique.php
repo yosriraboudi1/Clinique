@@ -3,9 +3,23 @@ require "..\..\connection.php";
 require "..\..\Controller\ReservationC.php";
 
 $r = new Reservation(); 
+$db=connect_db();
 $ListeDesRes = $r->getAll();
+if (isset($_POST["dte"])){
 $dte=$_POST["dte"];
-$req="SELECT * from reservation where date_deb='';"
+}
+else {
+    $dte ="";
+}
+
+$req="SELECT * from reservation where date_deb='$dte'";
+try{
+    $res=$db->query($req);
+}catch (PDOException $e){
+    die ($e->getMessage());
+}
+
+
 ?>  
 <html lang="en">
 <head>
@@ -31,12 +45,15 @@ $req="SELECT * from reservation where date_deb='';"
             <nav class="sidebar">
                 <ul>
                     <li>
-                        <img src="../images/logo.png" id="img">
+                        <img src="../front/images/logo.png" id="img">
                         </li>
-                        <br>
-                        <br>
-                            <br>
+                        <li>
+                                <a href="affR.php"><i class="bi bi-file-earmark"></i>&nbsp;Listes des <br> rendez-vous</a>
+                            </li>
                             <li>
+                                <a href="affC.php"><i class="bi bi-file-earmark"></i></i>&nbsp;Listes des <br> consultations</a>
+                            </li>
+							<li>
                                 <a href="affiche_res.php"><i class="bi bi-person-circle"></i>&nbsp;Liste des <br>reservations </a>
                             </li>
                             <li>
@@ -44,6 +61,9 @@ $req="SELECT * from reservation where date_deb='';"
                             </li>
                             <li>
                                 <a href="ajout_annonces.html"><i class="bi bi-plus-lg"></i>&nbsp;Ajouter <br>une annonce </a>
+                            </li>
+                            <li>
+                                <a href="statistique.php"><i class="bi bi-percent"></i>&nbsp;Statistique</a>
                             </li>
                             
 
@@ -57,7 +77,7 @@ $req="SELECT * from reservation where date_deb='';"
 <section>
 <form method=POST action=statistique.php>
   
-<input type="date" id="dte" name="dte" style="border:none ; color : black ">
+<input type="text" id="dte" name="dte" style="border:none ; color : black ">
 <input type="submit" value="chercher" style="background-color : #1B96C4; color : white ;border:none; border-radius:5px;">
 </form>
 </section>
@@ -65,9 +85,11 @@ $req="SELECT * from reservation where date_deb='';"
                         <thead>
                             <th>Nombre des reservation totale</th>
                             <th>Nombre des reservation</th>
-                            <th>Pourcentage</th>
+                            <th>Pourcentage %</th>
                         </thead>
                         <br>
                         <tr>
                             <td><?php echo sizeof($ListeDesRes) ?></td>
+                            <td><?php echo $res->rowCount(); ?></td>
+                            <td><?php echo ($res->rowCount()/sizeof($ListeDesRes)) *100; ?>%</td>
                         </tr>

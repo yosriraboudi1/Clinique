@@ -10,13 +10,6 @@ try{
     die($e->getMessage());
 }
 
-/*if (isset($_POST['search'])) {
-  $searchName = $_POST['searchName'];
-  $liste = $eventC->listEvent();
-  $liste = $eventC->searchEventByName($liste, $searchName);
-} else {
-  $liste = $eventC->listEvent();
-}*/
 
 
 ?>
@@ -66,7 +59,7 @@ try{
             <a class="nav-link" href="#"><i class="bi bi-book-fill"></i>&nbsp;Consultation</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><i class="bi bi-file-text-fill"></i>&nbsp;Rendez-vous</a>
+            <a class="nav-link" href="../back/addR.php"><i class="bi bi-file-text-fill"></i>&nbsp;Rendez-vous</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#"><i class="bi bi-chat-fill"></i>&nbsp;Forum</a>
@@ -118,48 +111,85 @@ try{
     </form>
   
     <br><br><br>
+    
   <section id="annonce">
   <div class="container">
       <div class="row">
  
- <?php while ($annonce = $res->fetch()){
-    $nom = $annonce["nom_inf"];
-    $prenom = $annonce["prenom_inf"];
-    $numtel = $annonce["numtel_inf"];
-    $hdeb = $annonce["heure_deb"];
-    $hfin = $annonce["heure_fin"];
-    $id = $annonce["id"];
-?>
-                
-                <div class="card col-4">
-                
-                    <img class="card-img-top" src="images/card_img.jpg" alt="Card image cap">
-                    <div class="card-body">
-                      <h5 class="card-title">
-                        <?php echo $nom." ".$prenom ;
+      <?php
+// Define the number of results to display per page
+$resultsPerPage = 3;
 
+// Get the current page from the query string
+if (isset($_GET['page'])) {
+    $currentPage = $_GET['page'];
+} else {
+    $currentPage = 1;
+}
 
-                        ?> 
-                      </h5>
-                      <p class="card-text">
-                        <?php
-                        echo "Je suis disponible du :".$hdeb . " jusqu'a :".$hfin."<br>";
-                        echo "Pour m'appeler voici mon numero :".$numtel ;
-                        ?>
-                    </p>
-                      <button type="button" onClick="window.location.href='page3.php?id=<?=$id ?>'" class="btn" style="background-color :#136989; color : white ;">Reserver maintenant </button>
-                    </div>
+// Modify your database query to include the LIMIT and OFFSET clauses
+$query = "SELECT * FROM annonce LIMIT " . (($currentPage - 1) * $resultsPerPage) . ", $resultsPerPage";
+$res = $db->query($query);
+
+if ($res->rowCount() > 0) { // Check if there are rows returned
+    while ($annonce = $res->fetch()) {
+        $nom = $annonce["nom_inf"];
+        $prenom = $annonce["prenom_inf"];
+        $numtel = $annonce["numtel_inf"];
+        $hdeb = $annonce["heure_deb"];
+        $hfin = $annonce["heure_fin"];
+        $id = $annonce["id"];
+        ?>
+        <div class="card col-4">
+            <img class="card-img-top" src="images/card_img.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <?php echo $nom . " " . $prenom; ?>
+                </h5>
+                <p class="card-text">
                     <?php
-                      echo '<i class="bi bi-patch-check-fill"></i>';
+                    echo "Je suis disponible du: " . $hdeb . " jusqu'à: " . $hfin . "<br>";
+                    echo "Pour m'appeler voici mon numéro: " . $numtel;
                     ?>
-                  </div>
-                  <?php
-                    }
-                    ?> 
+                </p>
+                <button type="button" onClick="window.location.href='page3.php?id=<?= $id ?>'" class="btn" style="background-color: #136989; color: white;">Réserver maintenant</button>
+            </div>
+            <?php
+            echo '<i class="bi bi-patch-check-fill"></i>';
+            ?>
+        </div>
+        <?php
+    }
+} else {
+    echo "No data found."; // Display a message if no rows are returned
+}
 
+// Calculate the total number of pages
+$totalResults = $db->query("SELECT COUNT(*) FROM annonce")->fetchColumn();
+$totalPages = ceil($totalResults / $resultsPerPage);
+
+// Display the pagination links
+echo '<div class="pagination">';
+if ($currentPage > 1) {
+    echo '<a href="?page=' . ($currentPage - 1) . '">Previous</a>';
+}
+for ($i = 1; $i <= $totalPages; $i++) {
+    if ($i == $currentPage) {
+        echo '<span class="current">' . $i . '</span>';
+    } else {
+        echo '<a href="?page=' . $i . '">' . $i . '</a>';
+    }
+}
+if ($currentPage < $totalPages) {
+    echo '<a href="?page=' . ($currentPage + 1) . '">Next</a>';
+}
+echo '</div>';
+?>
+
+ 
                 </div>
                 </div>
-                </div>
+                </div> 
            
                     
 
@@ -211,7 +241,7 @@ try{
     </footer>
 
 
-
+                    
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
